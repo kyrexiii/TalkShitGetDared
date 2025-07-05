@@ -1,5 +1,5 @@
 import { getTruth, getDare, getRandom, getAvailableLanguages, getAvailableModes } from './index';
-import { Language } from './types';
+import { Language } from './lib/index';
 
 /**
  * Test script for truth-or-dare-core package

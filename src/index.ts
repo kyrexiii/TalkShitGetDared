@@ -1,5 +1,11 @@
-import { TruthOrDareCore } from './core';
-import { PromptOptions, PromptResult, Language, Mode, PromptType, Prompt, CoreConfig, TruthOrDareError } from './types';
+import { 
+  TruthOrDareCore,
+  PromptOptions, 
+  PromptResult, 
+  Language, 
+  Mode, 
+  CoreConfig 
+} from './lib/index';
 
 // Create default instance
 const defaultCore = new TruthOrDareCore();
@@ -46,15 +52,5 @@ export function createCore(config?: Partial<CoreConfig>): TruthOrDareCore {
   return new TruthOrDareCore(config);
 }
 
-// Export types and classes
-export {
-  TruthOrDareCore,
-  PromptOptions,
-  PromptResult,
-  Language,
-  Mode,
-  PromptType,
-  Prompt,
-  CoreConfig,
-  TruthOrDareError
-};
+// Re-export everything from lib for advanced users
+export * from './lib/index';

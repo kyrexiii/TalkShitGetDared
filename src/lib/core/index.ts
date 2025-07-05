@@ -1,0 +1,1 @@
+export { TruthOrDareCore } from './TruthOrDareCore';

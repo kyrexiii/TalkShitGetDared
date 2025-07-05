@@ -50,11 +50,9 @@ export interface CoreConfig {
 }
 
 /**
- * Error types for the package
+ * Cache statistics interface
  */
-export class TruthOrDareError extends Error {
-  constructor(message: string, public code: string) {
-    super(message);
-    this.name = 'TruthOrDareError';
-  }
+export interface CacheStats {
+  size: number;
+  keys: string[];
 }

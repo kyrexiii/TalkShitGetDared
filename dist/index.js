@@ -1,17 +1,27 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TruthOrDareError = exports.TruthOrDareCore = void 0;
 exports.getTruth = getTruth;
 exports.getDare = getDare;
 exports.getRandom = getRandom;
 exports.getAvailableLanguages = getAvailableLanguages;
 exports.getAvailableModes = getAvailableModes;
 exports.createCore = createCore;
-const core_1 = require("./core");
-Object.defineProperty(exports, "TruthOrDareCore", { enumerable: true, get: function () { return core_1.TruthOrDareCore; } });
-const types_1 = require("./types");
-Object.defineProperty(exports, "TruthOrDareError", { enumerable: true, get: function () { return types_1.TruthOrDareError; } });
-const defaultCore = new core_1.TruthOrDareCore();
+const index_1 = require("./lib/index");
+const defaultCore = new index_1.TruthOrDareCore();
 function getTruth(options = {}) {
     return defaultCore.getTruth(options);
 }
@@ -28,6 +38,7 @@ function getAvailableModes(language) {
     return defaultCore.getAvailableModes(language);
 }
 function createCore(config) {
-    return new core_1.TruthOrDareCore(config);
+    return new index_1.TruthOrDareCore(config);
 }
+__exportStar(require("./lib/index"), exports);
 //# sourceMappingURL=index.js.map

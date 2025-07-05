@@ -1,0 +1,1 @@
+{"version":3,"file":"TruthOrDareError.d.ts","sourceRoot":"","sources":["../../../src/lib/errors/TruthOrDareError.ts"],"names":[],"mappings":"AAGA,qBAAa,gBAAiB,SAAQ,KAAK;IACzC,SAAgB,IAAI,EAAE,MAAM,CAAC;IAC7B,SAAgB,SAAS,EAAE,IAAI,CAAC;gBAEpB,OAAO,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM;IAelC,MAAM,IAAI,MAAM,CAAC,MAAM,EAAE,GAAG,CAAC;CASrC"}
