@@ -1,4 +1,4 @@
-const darePrompts = [
+const enNsfwDarePrompts = [
   {
     id: "en_nsfw_d001",
     prompt: "Give someone a lap dance."
@@ -41,4 +41,4 @@ const darePrompts = [
   }
 ];
 
-module.exports = { darePrompts };
+module.exports = { darePrompts: enNsfwDarePrompts };

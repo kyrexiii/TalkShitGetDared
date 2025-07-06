@@ -1,4 +1,4 @@
-const truthPrompts = [
+const esSfwTruthPrompts = [
   {
     id: "es_sfw_t001",
     prompt: "¿Cuál es tu mayor miedo?"
@@ -41,4 +41,4 @@ const truthPrompts = [
   }
 ];
 
-module.exports = { truthPrompts };
+module.exports = { truthPrompts: esSfwTruthPrompts };

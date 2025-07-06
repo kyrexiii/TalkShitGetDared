@@ -1,4 +1,4 @@
-const darePrompts = [
+const enSfwDarePrompts = [
   {
     id: "en_sfw_d001",
     prompt: "Sing a song chosen by the group."
@@ -41,4 +41,4 @@ const darePrompts = [
   }
 ];
 
-module.exports = { darePrompts };
+module.exports = { darePrompts: enSfwDarePrompts };
