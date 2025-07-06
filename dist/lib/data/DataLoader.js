@@ -47,13 +47,17 @@ class DataLoader {
         if (this.cache.has(cacheKey)) {
             return this.cache.get(cacheKey);
         }
-        const filePath = path.join(this.dataPath, language, mode, `${type}.json`);
+        const filePath = path.join(this.dataPath, language, mode, `${type}.ts`);
         try {
             if (!fs.existsSync(filePath)) {
                 throw new index_1.TruthOrDareError(`Data file not found: ${filePath}`, 'FILE_NOT_FOUND');
             }
-            const fileContent = fs.readFileSync(filePath, 'utf-8');
-            const prompts = JSON.parse(fileContent);
+            delete require.cache[require.resolve(filePath)];
+            const moduleImport = require(filePath);
+            const prompts = moduleImport[`${type}Prompts`];
+            if (!prompts) {
+                throw new index_1.TruthOrDareError(`No prompts export found in ${filePath}. Expected ${type}Prompts export.`, 'NO_EXPORT_FOUND');
+            }
             this.validatePromptsData(prompts, filePath);
             this.cache.set(cacheKey, prompts);
             return prompts;
@@ -61,9 +65,6 @@ class DataLoader {
         catch (error) {
             if (error instanceof index_1.TruthOrDareError) {
                 throw error;
-            }
-            if (error instanceof SyntaxError) {
-                throw new index_1.TruthOrDareError(`Invalid JSON in ${filePath}: ${error.message}`, 'INVALID_JSON');
             }
             throw new index_1.TruthOrDareError(`Failed to load prompts from ${filePath}: ${error instanceof Error ? error.message : 'Unknown error'}`, 'LOAD_ERROR');
         }

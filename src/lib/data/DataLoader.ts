@@ -4,7 +4,7 @@ import { Language, Mode, PromptType, Prompt } from '../types/index';
 import { TruthOrDareError } from '../errors/index';
 
 /**
- * Handles loading and caching of prompt data from JSON files
+ * Handles loading and caching of prompt data from TypeScript files
  */
 export class DataLoader {
   private cache: Map<string, Prompt[]> = new Map();
@@ -15,7 +15,7 @@ export class DataLoader {
   }
 
   /**
-   * Load prompts from JSON file with caching
+   * Load prompts from TypeScript file with caching
    */
   public loadPrompts(language: Language, mode: Mode, type: PromptType): Prompt[] {
     const cacheKey = `${language}_${mode}_${type}`;
@@ -25,7 +25,7 @@ export class DataLoader {
       return this.cache.get(cacheKey)!;
     }
 
-    const filePath = path.join(this.dataPath, language, mode, `${type}.json`);
+    const filePath = path.join(this.dataPath, language, mode, `${type}.ts`);
     
     try {
       if (!fs.existsSync(filePath)) {
@@ -35,8 +35,19 @@ export class DataLoader {
         );
       }
 
-      const fileContent = fs.readFileSync(filePath, 'utf-8');
-      const prompts = JSON.parse(fileContent) as Prompt[];
+      // Clear the require cache to ensure fresh data
+      delete require.cache[require.resolve(filePath)];
+      
+      // Use require to load the module
+      const moduleImport = require(filePath);
+      const prompts = moduleImport[`${type}Prompts`];
+
+      if (!prompts) {
+        throw new TruthOrDareError(
+          `No prompts export found in ${filePath}. Expected ${type}Prompts export.`,
+          'NO_EXPORT_FOUND'
+        );
+      }
 
       this.validatePromptsData(prompts, filePath);
       
@@ -47,13 +58,6 @@ export class DataLoader {
     } catch (error) {
       if (error instanceof TruthOrDareError) {
         throw error;
-      }
-      
-      if (error instanceof SyntaxError) {
-        throw new TruthOrDareError(
-          `Invalid JSON in ${filePath}: ${error.message}`,
-          'INVALID_JSON'
-        );
       }
 
       throw new TruthOrDareError(

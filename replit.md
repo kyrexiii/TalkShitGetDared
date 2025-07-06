@@ -84,6 +84,15 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+- **July 06, 2025**: Major data storage migration from JSON to TypeScript files
+  - Converted all data files from JSON format to TypeScript files for better type safety
+  - Updated DataLoader to use Node.js require() instead of dynamic imports for better CommonJS compatibility
+  - Modified all prompt data files (English SFW/NSFW, Spanish SFW) to use CommonJS exports
+  - Removed async behavior from core functions since file loading is now synchronous
+  - All API functions (getTruth, getDare, getRandom) remain synchronous with sub-millisecond performance
+  - Maintained full backward compatibility while improving type safety
+  - Successfully tested with Spanish and English content in both SFW and NSFW modes
+
 - **July 05, 2025**: Professional architecture refactoring to production-ready structure
   - Reorganized into layered architecture with 6 distinct layers (Core, Services, Data, Utils, Types, Errors)
   - Implemented dependency injection pattern for better testability and maintainability

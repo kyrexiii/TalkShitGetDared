@@ -19,6 +19,10 @@ args = "test_truth_dare_package"
 task = "workflow.run"
 args = "Build and Test Package"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Build Package"
+
 [[workflows.workflow]]
 name = "test_truth_dare_package"
 author = "agent"
@@ -34,3 +38,11 @@ author = "agent"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npx tsc && node dist/test.js"
+
+[[workflows.workflow]]
+name = "Build Package"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx tsc"
