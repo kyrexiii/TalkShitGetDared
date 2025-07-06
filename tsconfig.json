@@ -11,6 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "baseUrl": "./",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,

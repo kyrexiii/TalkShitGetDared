@@ -7,7 +7,7 @@ const index_3 = require("../errors/index");
 class PromptService {
     constructor(config) {
         this.config = config;
-        this.dataLoader = new index_1.DataLoader(config.dataPath);
+        this.dataLoader = new index_1.DataLoader();
     }
     getTruth(options = {}) {
         return this.getPrompt('truth', options);
@@ -74,7 +74,7 @@ class PromptService {
     updateConfig(newConfig) {
         this.config = { ...this.config, ...newConfig };
         if (newConfig.dataPath) {
-            this.dataLoader = new index_1.DataLoader(newConfig.dataPath);
+            this.dataLoader = new index_1.DataLoader();
         }
     }
 }

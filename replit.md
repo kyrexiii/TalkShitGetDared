@@ -55,7 +55,7 @@ The architecture is designed for enterprise use with scalability, maintainabilit
 
 1. **Initialization**: TruthOrDareCore class loads with default or custom configuration
 2. **Prompt Request**: User calls getTruth(), getDare(), or getRandom() with optional parameters
-3. **File Loading**: System loads appropriate JSON file based on language/mode/type
+3. **Direct Module Import**: System uses direct TypeScript imports to load prompt data (no file system operations)
 4. **Validation**: Content is validated for structure and availability
 5. **Selection**: Random prompt is selected from available options
 6. **Response**: Formatted result is returned with metadata
@@ -84,14 +84,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-- **July 06, 2025**: Major data storage migration from JSON to TypeScript files
-  - Converted all data files from JSON format to TypeScript files for better type safety
-  - Updated DataLoader to use Node.js require() instead of dynamic imports for better CommonJS compatibility
-  - Modified all prompt data files (English SFW/NSFW, Spanish SFW) to use CommonJS exports
-  - Removed async behavior from core functions since file loading is now synchronous
-  - All API functions (getTruth, getDare, getRandom) remain synchronous with sub-millisecond performance
-  - Maintained full backward compatibility while improving type safety
-  - Successfully tested with Spanish and English content in both SFW and NSFW modes
+- **July 06, 2025**: Major refactoring for universal compatibility (Next.js, Node.js, browsers)
+  - **Eliminated file system dependencies** - Replaced fs.readFileSync with direct TypeScript imports
+  - **Moved data location** - Relocated data files from data/lang/ to src/data/lang/ for better module resolution
+  - **Updated imports** - Changed from CommonJS require() to ES module direct imports in DataLoader
+  - **Inline type definitions** - Added inline Prompt interface definitions in data files to avoid import path issues
+  - **Universal compatibility** - Package now works in Next.js, Node.js, browsers, and all JavaScript environments
+  - **Zero external dependencies** - Maintained performance while eliminating file system operations
+  - **Preserved functionality** - All API functions remain synchronous with sub-millisecond performance
+  - **Testing validated** - Successfully tested with Spanish and English content in both SFW and NSFW modes
+  - **Architecture benefits** - Direct imports provide better tree-shaking and bundler optimization
 
 - **July 05, 2025**: Professional architecture refactoring to production-ready structure
   - Reorganized into layered architecture with 6 distinct layers (Core, Services, Data, Utils, Types, Errors)

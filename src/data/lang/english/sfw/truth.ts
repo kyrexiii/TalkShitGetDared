@@ -1,4 +1,10 @@
-const enSfwTruthPrompts = [
+// Define Prompt interface inline to avoid import issues
+interface Prompt {
+  id: string;
+  prompt: string;
+}
+
+export const truthPrompts: Prompt[] = [
   {
     id: "en_sfw_t001",
     prompt: "What's your biggest fear?"
@@ -40,5 +46,3 @@ const enSfwTruthPrompts = [
     prompt: "What's the worst lie you've ever told?"
   }
 ];
-
-module.exports = { truthPrompts: enSfwTruthPrompts };

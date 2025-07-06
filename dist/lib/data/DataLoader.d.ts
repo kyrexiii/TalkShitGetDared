@@ -1,8 +1,8 @@
 import { Language, Mode, PromptType, Prompt } from '../types/index';
 export declare class DataLoader {
     private cache;
-    private dataPath;
-    constructor(dataPath: string);
+    private dataMap;
+    constructor();
     loadPrompts(language: Language, mode: Mode, type: PromptType): Prompt[];
     private validatePromptsData;
     getAvailableLanguages(): Language[];

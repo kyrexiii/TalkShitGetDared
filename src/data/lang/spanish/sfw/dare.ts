@@ -1,4 +1,10 @@
-const esSfwDarePrompts = [
+// Define Prompt interface inline to avoid import issues
+interface Prompt {
+  id: string;
+  prompt: string;
+}
+
+export const darePrompts: Prompt[] = [
   {
     id: "es_sfw_d001",
     prompt: "Canta una canción elegida por el grupo."
@@ -40,5 +46,3 @@ const esSfwDarePrompts = [
     prompt: "Haz el pino durante 30 segundos."
   }
 ];
-
-module.exports = { darePrompts: esSfwDarePrompts };

@@ -34,40 +34,38 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DataLoader = void 0;
-const fs = __importStar(require("fs"));
-const path = __importStar(require("path"));
 const index_1 = require("../errors/index");
+const enSfwTruth = __importStar(require("../../data/lang/english/sfw/truth"));
+const enSfwDare = __importStar(require("../../data/lang/english/sfw/dare"));
+const enNsfwTruth = __importStar(require("../../data/lang/english/nsfw/truth"));
+const enNsfwDare = __importStar(require("../../data/lang/english/nsfw/dare"));
+const esSfwTruth = __importStar(require("../../data/lang/spanish/sfw/truth"));
+const esSfwDare = __importStar(require("../../data/lang/spanish/sfw/dare"));
 class DataLoader {
-    constructor(dataPath) {
+    constructor() {
         this.cache = new Map();
-        this.dataPath = dataPath;
+        this.dataMap = new Map([
+            ['english_sfw_truth', enSfwTruth.truthPrompts],
+            ['english_sfw_dare', enSfwDare.darePrompts],
+            ['english_nsfw_truth', enNsfwTruth.truthPrompts],
+            ['english_nsfw_dare', enNsfwDare.darePrompts],
+            ['spanish_sfw_truth', esSfwTruth.truthPrompts],
+            ['spanish_sfw_dare', esSfwDare.darePrompts],
+        ]);
     }
     loadPrompts(language, mode, type) {
         const cacheKey = `${language}_${mode}_${type}`;
         if (this.cache.has(cacheKey)) {
             return this.cache.get(cacheKey);
         }
-        const filePath = path.join(this.dataPath, language, mode, `${type}.ts`);
-        try {
-            if (!fs.existsSync(filePath)) {
-                throw new index_1.TruthOrDareError(`Data file not found: ${filePath}`, 'FILE_NOT_FOUND');
-            }
-            delete require.cache[require.resolve(filePath)];
-            const moduleImport = require(filePath);
-            const prompts = moduleImport[`${type}Prompts`];
-            if (!prompts) {
-                throw new index_1.TruthOrDareError(`No prompts export found in ${filePath}. Expected ${type}Prompts export.`, 'NO_EXPORT_FOUND');
-            }
-            this.validatePromptsData(prompts, filePath);
-            this.cache.set(cacheKey, prompts);
-            return prompts;
+        const dataKey = `${language}_${mode}_${type}`;
+        const prompts = this.dataMap.get(dataKey);
+        if (!prompts) {
+            throw new index_1.TruthOrDareError(`No data available for language: ${language}, mode: ${mode}, type: ${type}`, 'DATA_NOT_FOUND');
         }
-        catch (error) {
-            if (error instanceof index_1.TruthOrDareError) {
-                throw error;
-            }
-            throw new index_1.TruthOrDareError(`Failed to load prompts from ${filePath}: ${error instanceof Error ? error.message : 'Unknown error'}`, 'LOAD_ERROR');
-        }
+        this.validatePromptsData(prompts, dataKey);
+        this.cache.set(cacheKey, prompts);
+        return prompts;
     }
     validatePromptsData(prompts, filePath) {
         if (!Array.isArray(prompts)) {
@@ -83,33 +81,22 @@ class DataLoader {
         }
     }
     getAvailableLanguages() {
-        try {
-            if (!fs.existsSync(this.dataPath)) {
-                return [];
-            }
-            const entries = fs.readdirSync(this.dataPath, { withFileTypes: true });
-            return entries
-                .filter(entry => entry.isDirectory())
-                .map(entry => entry.name);
+        const languages = new Set();
+        for (const key of this.dataMap.keys()) {
+            const language = key.split('_')[0];
+            languages.add(language);
         }
-        catch (error) {
-            throw new index_1.TruthOrDareError(`Failed to get available languages: ${error instanceof Error ? error.message : 'Unknown error'}`, 'LANGUAGES_ERROR');
-        }
+        return Array.from(languages);
     }
     getAvailableModes(language) {
-        try {
-            const languagePath = path.join(this.dataPath, language);
-            if (!fs.existsSync(languagePath)) {
-                return [];
+        const modes = new Set();
+        for (const key of this.dataMap.keys()) {
+            const [keyLanguage, keyMode] = key.split('_');
+            if (keyLanguage === language) {
+                modes.add(keyMode);
             }
-            const entries = fs.readdirSync(languagePath, { withFileTypes: true });
-            return entries
-                .filter(entry => entry.isDirectory())
-                .map(entry => entry.name);
         }
-        catch (error) {
-            throw new index_1.TruthOrDareError(`Failed to get available modes for ${language}: ${error instanceof Error ? error.message : 'Unknown error'}`, 'MODES_ERROR');
-        }
+        return Array.from(modes);
     }
     clearCache() {
         this.cache.clear();

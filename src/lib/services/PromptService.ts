@@ -19,7 +19,7 @@ export class PromptService {
 
   constructor(config: CoreConfig) {
     this.config = config;
-    this.dataLoader = new DataLoader(config.dataPath);
+    this.dataLoader = new DataLoader();
   }
 
   /**
@@ -144,7 +144,7 @@ export class PromptService {
     
     // If data path changed, create new data loader
     if (newConfig.dataPath) {
-      this.dataLoader = new DataLoader(newConfig.dataPath);
+      this.dataLoader = new DataLoader();
     }
   }
 }

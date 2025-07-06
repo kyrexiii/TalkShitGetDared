@@ -1,4 +1,10 @@
-const enSfwDarePrompts = [
+// Define Prompt interface inline to avoid import issues
+interface Prompt {
+  id: string;
+  prompt: string;
+}
+
+export const darePrompts: Prompt[] = [
   {
     id: "en_sfw_d001",
     prompt: "Sing a song chosen by the group."
@@ -40,5 +46,3 @@ const enSfwDarePrompts = [
     prompt: "Do a handstand for 30 seconds."
   }
 ];
-
-module.exports = { darePrompts: enSfwDarePrompts };

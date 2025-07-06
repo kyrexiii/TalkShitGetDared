@@ -1,4 +1,10 @@
-const enNsfwDarePrompts = [
+// Define Prompt interface inline to avoid import issues
+interface Prompt {
+  id: string;
+  prompt: string;
+}
+
+export const darePrompts: Prompt[] = [
   {
     id: "en_nsfw_d001",
     prompt: "Give someone a lap dance."
@@ -9,15 +15,15 @@ const enNsfwDarePrompts = [
   },
   {
     id: "en_nsfw_d003",
-    prompt: "Take off one piece of clothing."
+    prompt: "Kiss the person to your right."
   },
   {
     id: "en_nsfw_d004",
-    prompt: "Send a flirty text to someone in your contacts."
+    prompt: "Make out with someone for 30 seconds."
   },
   {
     id: "en_nsfw_d005",
-    prompt: "Do a body shot off someone."
+    prompt: "Give someone a sensual massage."
   },
   {
     id: "en_nsfw_d006",
@@ -29,7 +35,7 @@ const enNsfwDarePrompts = [
   },
   {
     id: "en_nsfw_d008",
-    prompt: "Whisper something dirty in someone's ear."
+    prompt: "Take off one piece of clothing."
   },
   {
     id: "en_nsfw_d009",
@@ -40,5 +46,3 @@ const enNsfwDarePrompts = [
     prompt: "Let someone else choose a dare for you to do."
   }
 ];
-
-module.exports = { darePrompts: enNsfwDarePrompts };

@@ -1,21 +1,35 @@
-import * as fs from 'fs';
-import * as path from 'path';
 import { Language, Mode, PromptType, Prompt } from '../types/index';
 import { TruthOrDareError } from '../errors/index';
 
+// Direct imports of all data modules
+import * as enSfwTruth from '../../data/lang/english/sfw/truth';
+import * as enSfwDare from '../../data/lang/english/sfw/dare';
+import * as enNsfwTruth from '../../data/lang/english/nsfw/truth';
+import * as enNsfwDare from '../../data/lang/english/nsfw/dare';
+import * as esSfwTruth from '../../data/lang/spanish/sfw/truth';
+import * as esSfwDare from '../../data/lang/spanish/sfw/dare';
+
 /**
- * Handles loading and caching of prompt data from TypeScript files
+ * Handles loading and caching of prompt data from direct imports
  */
 export class DataLoader {
   private cache: Map<string, Prompt[]> = new Map();
-  private dataPath: string;
+  private dataMap: Map<string, Prompt[]>;
 
-  constructor(dataPath: string) {
-    this.dataPath = dataPath;
+  constructor() {
+    // Create static mapping of all data modules
+    this.dataMap = new Map([
+      ['english_sfw_truth', enSfwTruth.truthPrompts],
+      ['english_sfw_dare', enSfwDare.darePrompts],
+      ['english_nsfw_truth', enNsfwTruth.truthPrompts],
+      ['english_nsfw_dare', enNsfwDare.darePrompts],
+      ['spanish_sfw_truth', esSfwTruth.truthPrompts],
+      ['spanish_sfw_dare', esSfwDare.darePrompts],
+    ]);
   }
 
   /**
-   * Load prompts from TypeScript file with caching
+   * Load prompts from direct imports with caching
    */
   public loadPrompts(language: Language, mode: Mode, type: PromptType): Prompt[] {
     const cacheKey = `${language}_${mode}_${type}`;
@@ -25,46 +39,22 @@ export class DataLoader {
       return this.cache.get(cacheKey)!;
     }
 
-    const filePath = path.join(this.dataPath, language, mode, `${type}.ts`);
-    
-    try {
-      if (!fs.existsSync(filePath)) {
-        throw new TruthOrDareError(
-          `Data file not found: ${filePath}`,
-          'FILE_NOT_FOUND'
-        );
-      }
+    const dataKey = `${language}_${mode}_${type}`;
+    const prompts = this.dataMap.get(dataKey);
 
-      // Clear the require cache to ensure fresh data
-      delete require.cache[require.resolve(filePath)];
-      
-      // Use require to load the module
-      const moduleImport = require(filePath);
-      const prompts = moduleImport[`${type}Prompts`];
-
-      if (!prompts) {
-        throw new TruthOrDareError(
-          `No prompts export found in ${filePath}. Expected ${type}Prompts export.`,
-          'NO_EXPORT_FOUND'
-        );
-      }
-
-      this.validatePromptsData(prompts, filePath);
-      
-      // Cache the loaded data
-      this.cache.set(cacheKey, prompts);
-      
-      return prompts;
-    } catch (error) {
-      if (error instanceof TruthOrDareError) {
-        throw error;
-      }
-
+    if (!prompts) {
       throw new TruthOrDareError(
-        `Failed to load prompts from ${filePath}: ${error instanceof Error ? error.message : 'Unknown error'}`,
-        'LOAD_ERROR'
+        `No data available for language: ${language}, mode: ${mode}, type: ${type}`,
+        'DATA_NOT_FOUND'
       );
     }
+
+    this.validatePromptsData(prompts, dataKey);
+    
+    // Cache the loaded data
+    this.cache.set(cacheKey, prompts);
+    
+    return prompts;
   }
 
   /**
@@ -97,46 +87,33 @@ export class DataLoader {
   }
 
   /**
-   * Get available languages by scanning the data directory
+   * Get available languages from static data mapping
    */
   public getAvailableLanguages(): Language[] {
-    try {
-      if (!fs.existsSync(this.dataPath)) {
-        return [];
-      }
-
-      const entries = fs.readdirSync(this.dataPath, { withFileTypes: true });
-      return entries
-        .filter(entry => entry.isDirectory())
-        .map(entry => entry.name as Language);
-    } catch (error) {
-      throw new TruthOrDareError(
-        `Failed to get available languages: ${error instanceof Error ? error.message : 'Unknown error'}`,
-        'LANGUAGES_ERROR'
-      );
+    const languages = new Set<Language>();
+    
+    for (const key of this.dataMap.keys()) {
+      const language = key.split('_')[0] as Language;
+      languages.add(language);
     }
+    
+    return Array.from(languages);
   }
 
   /**
-   * Get available modes for a specific language
+   * Get available modes for a specific language from static data mapping
    */
   public getAvailableModes(language: Language): Mode[] {
-    try {
-      const languagePath = path.join(this.dataPath, language);
-      if (!fs.existsSync(languagePath)) {
-        return [];
+    const modes = new Set<Mode>();
+    
+    for (const key of this.dataMap.keys()) {
+      const [keyLanguage, keyMode] = key.split('_');
+      if (keyLanguage === language) {
+        modes.add(keyMode as Mode);
       }
-
-      const entries = fs.readdirSync(languagePath, { withFileTypes: true });
-      return entries
-        .filter(entry => entry.isDirectory())
-        .map(entry => entry.name as Mode);
-    } catch (error) {
-      throw new TruthOrDareError(
-        `Failed to get available modes for ${language}: ${error instanceof Error ? error.message : 'Unknown error'}`,
-        'MODES_ERROR'
-      );
     }
+    
+    return Array.from(modes);
   }
 
   /**
