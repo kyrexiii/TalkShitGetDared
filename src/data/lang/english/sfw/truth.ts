@@ -1,48 +1,84 @@
 // Define Prompt interface inline to avoid import issues
+type DifficultyLevel = 'easy' | 'medium' | 'hard' | 'extreme';
+type PromptCategory = 'personal' | 'embarrassing' | 'relationships' | 'funny' | 'physical' | 'social' | 'intimate' | 'confession';
+
 interface Prompt {
   id: string;
-  prompt: string;
+  text: string;
+  contributor: string;
+  difficulty: DifficultyLevel;
+  category: PromptCategory;
 }
 
 export const truthPrompts: Prompt[] = [
   {
     id: "en_sfw_t001",
-    prompt: "What's your biggest fear?"
+    text: "What's your biggest fear?",
+    contributor: "core#0001",
+    difficulty: "easy",
+    category: "personal"
   },
   {
     id: "en_sfw_t002",
-    prompt: "What's the most embarrassing thing that's ever happened to you?"
+    text: "What's the most embarrassing thing that's ever happened to you?",
+    contributor: "core#0001",
+    difficulty: "medium",
+    category: "embarrassing"
   },
   {
     id: "en_sfw_t003",
-    prompt: "What's your biggest secret?"
+    text: "What's your biggest secret?",
+    contributor: "core#0001",
+    difficulty: "hard",
+    category: "confession"
   },
   {
     id: "en_sfw_t004",
-    prompt: "Who was your first crush?"
+    text: "Who was your first crush?",
+    contributor: "core#0001",
+    difficulty: "easy",
+    category: "relationships"
   },
   {
     id: "en_sfw_t005",
-    prompt: "What's something you've never told your parents?"
+    text: "What's something you've never told your parents?",
+    contributor: "core#0001",
+    difficulty: "medium",
+    category: "personal"
   },
   {
     id: "en_sfw_t006",
-    prompt: "What's the weirdest dream you've ever had?"
+    text: "What's the weirdest dream you've ever had?",
+    contributor: "core#0001",
+    difficulty: "easy",
+    category: "funny"
   },
   {
     id: "en_sfw_t007",
-    prompt: "If you could change one thing about yourself, what would it be?"
+    text: "If you could change one thing about yourself, what would it be?",
+    contributor: "core#0001",
+    difficulty: "medium",
+    category: "personal"
   },
   {
     id: "en_sfw_t008",
-    prompt: "What's the most childish thing you still do?"
+    text: "What's the most childish thing you still do?",
+    contributor: "core#0001",
+    difficulty: "easy",
+    category: "funny"
   },
   {
     id: "en_sfw_t009",
-    prompt: "What's your most irrational fear?"
+    text: "What's your most irrational fear?",
+    contributor: "core#0001",
+    difficulty: "easy",
+    category: "personal"
   },
   {
     id: "en_sfw_t010",
-    prompt: "What's the worst lie you've ever told?"
+    text: "What's the worst lie you've ever told?",
+    contributor: "core#0001",
+    difficulty: "hard",
+    category: "confession"
   }
 ];

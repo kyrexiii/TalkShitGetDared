@@ -52,12 +52,30 @@ export class PromptService {
     const mode = options.mode || this.config.defaultMode;
 
     try {
-      const prompts = this.dataLoader.loadPrompts(language, mode, type);
+      let prompts = this.dataLoader.loadPrompts(language, mode, type);
+      
+      // Filter by difficulty if specified
+      if (options.difficulty) {
+        prompts = prompts.filter(prompt => prompt.difficulty === options.difficulty);
+      }
+      
+      // Filter by category if specified
+      if (options.category) {
+        prompts = prompts.filter(prompt => prompt.category === options.category);
+      }
+      
+      // Ensure we have prompts after filtering
+      if (prompts.length === 0) {
+        throw new TruthOrDareError(
+          `No prompts found matching the specified criteria for ${language} ${mode} ${type}`,
+          'NO_MATCHING_PROMPTS'
+        );
+      }
+      
       const selectedPrompt = RandomSelector.getRandomElement(prompts);
 
       return {
-        id: selectedPrompt.id,
-        prompt: selectedPrompt.prompt,
+        prompt: selectedPrompt,
         type,
         language,
         mode
@@ -87,8 +105,7 @@ export class PromptService {
         const selectedPrompt = RandomSelector.getRandomElement(prompts);
 
         return {
-          id: selectedPrompt.id,
-          prompt: selectedPrompt.prompt,
+          prompt: selectedPrompt,
           type,
           language: this.config.defaultLanguage,
           mode: this.config.defaultMode

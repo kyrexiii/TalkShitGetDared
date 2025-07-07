@@ -75,8 +75,12 @@ class DataLoader {
             throw new index_1.TruthOrDareError(`No prompts found in ${filePath}`, 'NO_PROMPTS_FOUND');
         }
         for (const prompt of prompts) {
-            if (!prompt.id || !prompt.prompt) {
-                throw new index_1.TruthOrDareError(`Invalid prompt structure in ${filePath}. Each prompt must have 'id' and 'prompt' fields.`, 'INVALID_PROMPT_STRUCTURE');
+            if (!prompt.id || typeof prompt.id !== 'string' ||
+                !prompt.text || typeof prompt.text !== 'string' ||
+                !prompt.contributor || typeof prompt.contributor !== 'string' ||
+                !prompt.difficulty || typeof prompt.difficulty !== 'string' ||
+                !prompt.category || typeof prompt.category !== 'string') {
+                throw new index_1.TruthOrDareError(`Invalid prompt structure in ${filePath}. Each prompt must have 'id', 'text', 'contributor', 'difficulty', and 'category' fields.`, 'INVALID_PROMPT_STRUCTURE');
             }
         }
     }

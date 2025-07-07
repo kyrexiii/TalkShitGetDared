@@ -18,8 +18,8 @@ async function runTests() {
         const truthStart = Date.now();
         const truth1 = (0, index_1.getTruth)();
         const truthTime = Date.now() - truthStart;
-        console.log(`ID: ${truth1.id}`);
-        console.log(`Prompt: ${truth1.prompt}`);
+        console.log(`ID: ${truth1.prompt.id}`);
+        console.log(`Prompt: ${truth1.prompt.text}`);
         console.log(`Type: ${truth1.type}`);
         console.log(`Language: ${truth1.language}`);
         console.log(`Mode: ${truth1.mode}`);
@@ -29,8 +29,8 @@ async function runTests() {
         const dareStart = Date.now();
         const dare1 = (0, index_1.getDare)();
         const dareTime = Date.now() - dareStart;
-        console.log(`ID: ${dare1.id}`);
-        console.log(`Prompt: ${dare1.prompt}`);
+        console.log(`ID: ${dare1.prompt.id}`);
+        console.log(`Prompt: ${dare1.prompt.text}`);
         console.log(`Type: ${dare1.type}`);
         console.log(`Language: ${dare1.language}`);
         console.log(`Mode: ${dare1.mode}`);
@@ -40,8 +40,8 @@ async function runTests() {
         const randomStart = Date.now();
         const random1 = (0, index_1.getRandom)();
         const randomTime = Date.now() - randomStart;
-        console.log(`ID: ${random1.id}`);
-        console.log(`Prompt: ${random1.prompt}`);
+        console.log(`ID: ${random1.prompt.id}`);
+        console.log(`Prompt: ${random1.prompt.text}`);
         console.log(`Type: ${random1.type}`);
         console.log(`Language: ${random1.language}`);
         console.log(`Mode: ${random1.mode}`);
@@ -51,8 +51,8 @@ async function runTests() {
         const spanishStart = Date.now();
         const spanish = (0, index_1.getTruth)({ language: 'spanish', mode: 'sfw' });
         const spanishTime = Date.now() - spanishStart;
-        console.log(`ID: ${spanish.id}`);
-        console.log(`Prompt: ${spanish.prompt}`);
+        console.log(`ID: ${spanish.prompt.id}`);
+        console.log(`Prompt: ${spanish.prompt.text}`);
         console.log(`Type: ${spanish.type}`);
         console.log(`Language: ${spanish.language}`);
         console.log(`Mode: ${spanish.mode}`);
@@ -62,8 +62,8 @@ async function runTests() {
         const nsfwStart = Date.now();
         const nsfw = (0, index_1.getDare)({ language: 'english', mode: 'nsfw' });
         const nsfwTime = Date.now() - nsfwStart;
-        console.log(`ID: ${nsfw.id}`);
-        console.log(`Prompt: ${nsfw.prompt}`);
+        console.log(`ID: ${nsfw.prompt.id}`);
+        console.log(`Prompt: ${nsfw.prompt.text}`);
         console.log(`Type: ${nsfw.type}`);
         console.log(`Language: ${nsfw.language}`);
         console.log(`Mode: ${nsfw.mode}`);
@@ -75,7 +75,7 @@ async function runTests() {
             const callStart = Date.now();
             const random = (0, index_1.getRandom)();
             const callTime = Date.now() - callStart;
-            console.log(`${i + 1}. [${random.type.toUpperCase()}] ${random.prompt} (${callTime}ms)`);
+            console.log(`${i + 1}. [${random.type.toUpperCase()}] ${random.prompt.text} (${callTime}ms)`);
         }
         const multipleTime = Date.now() - multipleStart;
         console.log(`Total time for 5 calls: ${multipleTime}ms`);

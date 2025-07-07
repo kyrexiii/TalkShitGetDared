@@ -4,43 +4,73 @@ exports.darePrompts = void 0;
 exports.darePrompts = [
     {
         id: "en_nsfw_d001",
-        prompt: "Give someone a lap dance."
+        text: "Give someone a lap dance.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "en_nsfw_d002",
-        prompt: "Kiss the person to your left."
+        text: "Strip down to your underwear.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "en_nsfw_d003",
-        prompt: "Kiss the person to your right."
+        text: "Kiss the person to your left passionately.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "en_nsfw_d004",
-        prompt: "Make out with someone for 30 seconds."
+        text: "Make out with someone for 30 seconds.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "en_nsfw_d005",
-        prompt: "Give someone a sensual massage."
+        text: "Give someone a sensual massage.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "en_nsfw_d006",
-        prompt: "Make out with someone for 30 seconds."
+        text: "Lick whipped cream off someone's body.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "en_nsfw_d007",
-        prompt: "Let someone give you a massage."
+        text: "Do a sexy dance for 1 minute.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "en_nsfw_d008",
-        prompt: "Take off one piece of clothing."
+        text: "Take off one piece of clothing.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "en_nsfw_d009",
-        prompt: "Flash the group for 3 seconds."
+        text: "Flash the group for 3 seconds.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "en_nsfw_d010",
-        prompt: "Let someone else choose a dare for you to do."
+        text: "Whisper something dirty in someone's ear.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     }
 ];
 //# sourceMappingURL=dare.js.map

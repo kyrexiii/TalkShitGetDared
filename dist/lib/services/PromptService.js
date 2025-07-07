@@ -23,11 +23,19 @@ class PromptService {
         const language = options.language || this.config.defaultLanguage;
         const mode = options.mode || this.config.defaultMode;
         try {
-            const prompts = this.dataLoader.loadPrompts(language, mode, type);
+            let prompts = this.dataLoader.loadPrompts(language, mode, type);
+            if (options.difficulty) {
+                prompts = prompts.filter(prompt => prompt.difficulty === options.difficulty);
+            }
+            if (options.category) {
+                prompts = prompts.filter(prompt => prompt.category === options.category);
+            }
+            if (prompts.length === 0) {
+                throw new index_3.TruthOrDareError(`No prompts found matching the specified criteria for ${language} ${mode} ${type}`, 'NO_MATCHING_PROMPTS');
+            }
             const selectedPrompt = index_2.RandomSelector.getRandomElement(prompts);
             return {
-                id: selectedPrompt.id,
-                prompt: selectedPrompt.prompt,
+                prompt: selectedPrompt,
                 type,
                 language,
                 mode
@@ -43,8 +51,7 @@ class PromptService {
                 const prompts = this.dataLoader.loadPrompts(this.config.defaultLanguage, this.config.defaultMode, type);
                 const selectedPrompt = index_2.RandomSelector.getRandomElement(prompts);
                 return {
-                    id: selectedPrompt.id,
-                    prompt: selectedPrompt.prompt,
+                    prompt: selectedPrompt,
                     type,
                     language: this.config.defaultLanguage,
                     mode: this.config.defaultMode

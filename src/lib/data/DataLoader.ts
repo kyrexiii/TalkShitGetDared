@@ -77,9 +77,13 @@ export class DataLoader {
 
     // Validate prompt structure
     for (const prompt of prompts) {
-      if (!prompt.id || !prompt.prompt) {
+      if (!prompt.id || typeof prompt.id !== 'string' || 
+          !prompt.text || typeof prompt.text !== 'string' ||
+          !prompt.contributor || typeof prompt.contributor !== 'string' ||
+          !prompt.difficulty || typeof prompt.difficulty !== 'string' ||
+          !prompt.category || typeof prompt.category !== 'string') {
         throw new TruthOrDareError(
-          `Invalid prompt structure in ${filePath}. Each prompt must have 'id' and 'prompt' fields.`,
+          `Invalid prompt structure in ${filePath}. Each prompt must have 'id', 'text', 'contributor', 'difficulty', and 'category' fields.`,
           'INVALID_PROMPT_STRUCTURE'
         );
       }

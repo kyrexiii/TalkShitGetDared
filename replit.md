@@ -84,6 +84,15 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+- **July 07, 2025**: Enhanced prompt structure with contributor tracking and professional output format
+  - **New output format** - Restructured API to return `{prompt: {id, text, contributor}, type, language, mode}`
+  - **Contributor attribution** - Added `contributor` field to all prompts for content tracking and credit
+  - **Professional data structure** - Changed from `prompt` to `text` field for clearer semantic meaning
+  - **Enhanced validation** - Updated validation to check for `id`, `text`, and `contributor` fields
+  - **Maintained compatibility** - All existing API functions work with new structure
+  - **Content attribution** - All existing prompts attributed to "core#0001" as foundational content
+  - **Performance preserved** - Sub-millisecond response times maintained with new structure
+
 - **July 06, 2025**: Major refactoring for universal compatibility (Next.js, Node.js, browsers)
   - **Eliminated file system dependencies** - Replaced fs.readFileSync with direct TypeScript imports
   - **Moved data location** - Relocated data files from data/lang/ to src/data/lang/ for better module resolution

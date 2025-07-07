@@ -14,11 +14,24 @@ export type Mode = 'sfw' | 'nsfw';
 export type PromptType = 'truth' | 'dare';
 
 /**
+ * Difficulty levels for prompts
+ */
+export type DifficultyLevel = 'easy' | 'medium' | 'hard' | 'extreme';
+
+/**
+ * Categories for better prompt organization
+ */
+export type PromptCategory = 'personal' | 'embarrassing' | 'relationships' | 'funny' | 'physical' | 'social' | 'intimate' | 'confession';
+
+/**
  * Structure of a truth or dare prompt
  */
 export interface Prompt {
   id: string;
-  prompt: string;
+  text: string;
+  contributor: string;
+  difficulty: DifficultyLevel;
+  category: PromptCategory;
 }
 
 /**
@@ -27,14 +40,15 @@ export interface Prompt {
 export interface PromptOptions {
   language?: Language;
   mode?: Mode;
+  difficulty?: DifficultyLevel;
+  category?: PromptCategory;
 }
 
 /**
  * Result returned by prompt functions
  */
 export interface PromptResult {
-  id: string;
-  prompt: string;
+  prompt: Prompt;
   type: PromptType;
   language: Language;
   mode: Mode;

@@ -4,43 +4,73 @@ exports.darePrompts = void 0;
 exports.darePrompts = [
     {
         id: "es_sfw_d001",
-        prompt: "Canta una canción elegida por el grupo."
+        text: "Canta una canción elegida por el grupo.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "es_sfw_d002",
-        prompt: "Haz tu mejor imitación de una celebrity."
+        text: "Haz tu mejor imitación de una celebridad.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "es_sfw_d003",
-        prompt: "Baila sin música durante 30 segundos."
+        text: "Baila sin música durante 30 segundos.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "es_sfw_d004",
-        prompt: "Llama a un contacto aleatorio de tu teléfono y cántale Feliz Cumpleaños."
+        text: "Llama a un contacto aleatorio y cántale feliz cumpleaños.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "es_sfw_d005",
-        prompt: "Haz 10 flexiones."
+        text: "Haz 10 flexiones.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "es_sfw_d006",
-        prompt: "Come una cucharada de un condimento."
+        text: "Envía un mensaje a tu ex diciéndole que lo extrañas.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "es_sfw_d007",
-        prompt: "Publica una foto embarazosa en las redes sociales."
+        text: "Publica una foto embarazosa en redes sociales.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "es_sfw_d008",
-        prompt: "Envía un mensaje a tu ex diciéndole que lo extrañas."
+        text: "Deja que alguien más publique un estado en tus redes sociales.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "es_sfw_d009",
-        prompt: "Deja que alguien más publique un estado en tus redes sociales."
+        text: "Come una cucharada de salsa picante.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     },
     {
         id: "es_sfw_d010",
-        prompt: "Haz el pino durante 30 segundos."
+        text: "Haz una parada de manos durante 30 segundos.",
+        contributor: "core#0001",
+        difficulty: "medium",
+        category: "personal"
     }
 ];
 //# sourceMappingURL=dare.js.map
