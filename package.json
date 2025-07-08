@@ -1,14 +1,36 @@
 {
-  "name": "workspace",
-  "version": "1.0.0",
-  "description": "A TypeScript npm package providing core logic for truth-and-dare applications with multi-language and content filtering support.",
-  "main": "index.js",
+  "name": "talkshitgetdared-v3",
+  "version": "1.0.2",
+  "description": "The truth will hurt. An open-source cursed-core engine for Truth & Dare prompts.",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.js",
+    "start": "npm run build && node dist/test.js",
+    "dev": "ts-node src/test.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "dist",
+    "scripts",
+    "src",
+    "README.md",
+    "LICENSE.txt"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyrexiii/TalkShitGetDared"
+  },
+  "keywords": [
+    "truth-or-dare",
+    "prompts",
+    "chaos",
+    "nsfw",
+    "sfw",
+    "typescript",
+    "party",
+    "discord-bot"
+  ],
+  "author": "Haruka",
+  "license": "MIT",
   "dependencies": {
     "@types/node": "^24.0.10",
     "ts-node": "^10.9.2",

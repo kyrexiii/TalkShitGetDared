@@ -1,0 +1,32 @@
+The "Do Whatever The Hell You Want But Don't Blame Me" License (TSDD-69)
+
+Copyright (c) 2025 Haruka
+
+Permission is hereby granted, free of charge, to any homie obtaining a copy
+of this software and associated files (aka "the cursed payload"), to use,
+copy, modify, merge, publish, distribute, eat, remix, memeify, or sacrifice
+to the spaghetti gods — without asking me first.
+
+The only rule: 
+> DON’T come crying to me if your bot breaks, your app explodes, or your crush still leaves you.  
+I gave you chaos, not warranties.
+
+You’re free to:
+- make cool shit
+- make cursed shit
+- sell it to someone dumber than you
+- blame it on your intern
+- or fork it and call it TalkShitGetLoved
+
+As long as:
+- you keep my name in the credits (respect)
+- and don’t sue me. Ever. Please. I’m broke.
+
+By using this, you accept that:
+🧠 This is for fun.
+🧪 This is experimental.
+💀 This might get you kicked out of a family dinner.
+
+Sincerely,  
+the one who dares you to press `npm publish` —  
+Haruka

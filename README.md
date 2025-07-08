@@ -1,191 +1,87 @@
-# Truth-or-Dare Core
+# 💀 TalkShitGetDared
 
-A TypeScript npm package providing core logic for truth-and-dare applications with multi-language and content filtering support.
+A dangerously cursed, zero-dependency TypeScript package for all your Truth or Dare needs.  
+Perfect for bots, APIs, party games, emotionally unstable couples, and Discord servers with too much free time.
 
-## Features
+> 🧠 Use responsibly... or don’t.  
+> 😇 I'm not legally responsible if your relationship ends.
 
-- 🌍 **Multi-language support** - Easily add new languages
-- 🔒 **Content filtering** - SFW and NSFW modes
-- 📁 **Structured data** - Organized JSON files for easy management
-- 🎲 **Random selection** - Get random truth, dare, or mixed prompts
-- 💪 **TypeScript** - Full type safety and IntelliSense support
-- 🛡️ **Error handling** - Comprehensive error handling with fallbacks
-- 📦 **Zero dependencies** - Uses only Node.js built-in modules
+---
 
-## Installation
+## 🤸 What Even Is This?
+
+**TalkShitGetDared** is a JSON-powered chaos engine filled with:
+- ✅ Truths that emotionally damage people
+- ✅ Dares that ruin friend groups (safely)
+- 🔥 NSFW & SFW modes
+- 🌍 English and Spanish support
+- 🎯 Difficulty and category filters (because pain comes in levels)
+
+---
+
+## 📦 Installation
 
 ```bash
-npm install truth-or-dare-core
+npm install talkshitgetdared
+````
+
+---
+
+## 🧪 Usage
+
+```ts
+import { truthPrompts, darePrompts } from 'talkshitgetdared';
+
+// get all NSFW truths in Spanish that are medium difficulty
+const chaos = truthPrompts.filter(p =>
+  p.id.startsWith('es_nsfw') && p.difficulty === 'medium'
+);
 ```
 
-## Quick Start
+---
 
-```typescript
-import { getTruth, getDare, getRandom } from 'truth-or-dare-core';
+---
 
-// Get a random truth (defaults to English SFW)
-const truth = getTruth();
-console.log(truth.prompt); // "What's your biggest fear?"
-
-// Get a random dare with specific options
-const dare = getDare({ language: 'spanish', mode: 'sfw' });
-console.log(dare.prompt); // "Canta una canción elegida por el grupo."
-
-// Get a random truth or dare
-const random = getRandom({ language: 'english', mode: 'nsfw' });
-console.log(`${random.type}: ${random.prompt}`);
-```
-
-## API Reference
-
-### Core Functions
-
-#### `getTruth(options?)`
-Returns a random truth prompt.
-
-**Parameters:**
-- `options` (optional): Configuration object
-  - `language?: 'english' | 'spanish'` - Language for the prompt (default: 'english')
-  - `mode?: 'sfw' | 'nsfw'` - Content filtering mode (default: 'sfw')
-
-**Returns:** `PromptResult`
-
-#### `getDare(options?)`
-Returns a random dare prompt.
-
-**Parameters:**
-- `options` (optional): Same as `getTruth()`
-
-**Returns:** `PromptResult`
-
-#### `getRandom(options?)`
-Returns a random truth or dare prompt.
-
-**Parameters:**
-- `options` (optional): Same as `getTruth()`
-
-**Returns:** `PromptResult`
-
-### Utility Functions
-
-#### `getAvailableLanguages()`
-Returns an array of available languages.
-
-**Returns:** `Language[]`
-
-#### `getAvailableModes(language)`
-Returns available modes for a specific language.
-
-**Parameters:**
-- `language: Language` - The language to check
-
-**Returns:** `Mode[]`
-
-#### `createCore(config?)`
-Creates a new core instance with custom configuration.
-
-**Parameters:**
-- `config` (optional): Configuration object
-  - `defaultLanguage?: Language` - Default language to use
-  - `defaultMode?: Mode` - Default mode to use
-  - `dataPath?: string` - Custom path to data files
-
-**Returns:** `TruthOrDareCore`
-
-### Types
-
-#### `PromptResult`
-```typescript
-interface PromptResult {
-  id: string;        // Unique identifier for the prompt
-  prompt: string;    // The actual prompt text
-  type: 'truth' | 'dare';  // Type of prompt
-  language: Language;      // Language of the prompt
-  mode: Mode;             // Content filtering mode
-}
-```
-
-#### `Language`
-```typescript
-type Language = 'english' | 'spanish';
-```
-
-#### `Mode`
-```typescript
-type Mode = 'sfw' | 'nsfw';
-```
-
-## Data Structure
-
-The package organizes prompts in a hierarchical structure:
+## 📁 Folder Structure (in case you get lost)
 
 ```
-data/
-└── lang/
-    ├── english/
-    │   ├── sfw/
-    │   │   ├── truth.json
-    │   │   └── dare.json
-    │   └── nsfw/
-    │       ├── truth.json
-    │       └── dare.json
-    └── spanish/
-        └── sfw/
-            ├── truth.json
-            └── dare.json
+/data
+  └── /lang
+      ├── english/
+      │   ├── sfw/
+      │   └── nsfw/
+      └── spanish/
+          └── sfw/
 ```
 
-Each JSON file contains an array of prompt objects:
+---
 
-```json
-[
-  {
-    "id": "en_sfw_t001",
-    "prompt": "What's your biggest fear?"
-  }
-]
-```
+## 🤝 Contribute (or ruin it more)
 
-## Advanced Usage
+Want to add your own unhinged prompts in any language?
+Fork it, PR it, and maybe I’ll approve it while crying in the corner.
 
-### Custom Core Instance
+---
 
-```typescript
-import { createCore } from 'truth-or-dare-core';
+## ⚠️ Legal & Emotional Disclaimer
 
-const customCore = createCore({
-  defaultLanguage: 'spanish',
-  defaultMode: 'sfw',
-  dataPath: './custom-data-path'
-});
+This package is for entertainment purposes only.
+Do not use in court.
+Do not cry.
+Do not use with your ex unless you're ready for consequences.
 
-const truth = customCore.getTruth();
-```
+---
 
-### Error Handling
+## 📜 License
 
-```typescript
-import { getTruth, TruthOrDareError } from 'truth-or-dare-core';
+MIT – do whatever you want, just don’t blame me for your breakup.
+> – [MIT License, Cursed Edition](./LICENSE.txt)
 
-try {
-  const truth = getTruth({ language: 'french' }); // Unsupported language
-} catch (error) {
-  if (error instanceof TruthOrDareError) {
-    console.log(`Error: ${error.message}`);
-    console.log(`Code: ${error.code}`);
-  }
-}
-```
+---
 
-## Contributing
+## 🌐 Links
 
-To add new languages or prompts:
+* GitHub: [kyrexiii/TalkShitGetDared](https://github.com/kyrexiii/TalkShitGetDared)
+* NPM: [talkshitgetdared-v3](https://www.npmjs.com/package/talkshitgetdared)
 
-1. Create the appropriate folder structure in `data/lang/`
-2. Add JSON files with the correct format
-3. Update the `Language` type in `src/types.ts`
-4. Test your changes
-
-## License
-
-MIT
+---

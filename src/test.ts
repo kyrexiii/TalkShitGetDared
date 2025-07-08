@@ -33,6 +33,9 @@ async function runTests() {
     console.log(`Language: ${truth1.language}`);
     console.log(`Mode: ${truth1.mode}`);
     console.log(`timeTaken: ${truthTime}ms`);
+    console.log(`Contributor: ${truth1.prompt.contributor}`);
+    console.log(`Category: ${truth1.prompt.category}`);
+    console.log(`Difficulty: ${truth1.prompt.difficulty}`);
     console.log();
 
     // Test getDare with defaults
@@ -46,6 +49,9 @@ async function runTests() {
     console.log(`Language: ${dare1.language}`);
     console.log(`Mode: ${dare1.mode}`);
     console.log(`timeTaken: ${dareTime}ms`);
+    console.log(`Contributor: ${truth1.prompt.contributor}`);
+    console.log(`Category: ${truth1.prompt.category}`);
+    console.log(`Difficulty: ${truth1.prompt.difficulty}`);
     console.log();
 
     // Test getRandom with defaults
@@ -59,6 +65,9 @@ async function runTests() {
     console.log(`Language: ${random1.language}`);
     console.log(`Mode: ${random1.mode}`);
     console.log(`timeTaken: ${randomTime}ms`);
+    console.log(`Contributor: ${truth1.prompt.contributor}`);
+    console.log(`Category: ${truth1.prompt.category}`);
+    console.log(`Difficulty: ${truth1.prompt.difficulty}`);
     console.log();
 
     // Test with specific language and mode
@@ -72,6 +81,9 @@ async function runTests() {
     console.log(`Language: ${spanish.language}`);
     console.log(`Mode: ${spanish.mode}`);
     console.log(`timeTaken: ${spanishTime}ms`);
+    console.log(`Contributor: ${truth1.prompt.contributor}`);
+    console.log(`Category: ${truth1.prompt.category}`);
+    console.log(`Difficulty: ${truth1.prompt.difficulty}`);
     console.log();
 
     // Test with NSFW mode
@@ -85,6 +97,9 @@ async function runTests() {
     console.log(`Language: ${nsfw.language}`);
     console.log(`Mode: ${nsfw.mode}`);
     console.log(`timeTaken: ${nsfwTime}ms`);
+    console.log(`Contributor: ${truth1.prompt.contributor}`);
+    console.log(`Category: ${truth1.prompt.category}`);
+    console.log(`Difficulty: ${truth1.prompt.difficulty}`);
     console.log();
 
     // Test multiple random calls

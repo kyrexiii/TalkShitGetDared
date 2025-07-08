@@ -13,72 +13,37 @@ interface Prompt {
 export const darePrompts: Prompt[] = [
   {
     id: "es_sfw_d001",
-    text: "Canta una canción elegida por el grupo.",
-    contributor: "core#0001",
-    difficulty: "medium",
-    category: "personal"
+    text: "Escribe tu próximo mensaje con los ojos cerrados.",
+    contributor: "himanshu137",
+    difficulty: "easy",
+    category: "funny"
   },
   {
     id: "es_sfw_d002",
-    text: "Haz tu mejor imitación de una celebridad.",
-    contributor: "core#0001",
-    difficulty: "medium",
+    text: "Envía un emoji que represente cómo te sientes ahora.",
+    contributor: "himanshu137",
+    difficulty: "easy",
     category: "personal"
   },
   {
     id: "es_sfw_d003",
-    text: "Baila sin música durante 30 segundos.",
-    contributor: "core#0001",
+    text: "Graba un audio diciendo 'Estoy enamorado de mi almohada 🥲' como si fuera serio.",
+    contributor: "himanshu137",
     difficulty: "medium",
-    category: "personal"
+    category: "funny"
   },
   {
     id: "es_sfw_d004",
-    text: "Llama a un contacto aleatorio y cántale feliz cumpleaños.",
-    contributor: "core#0001",
+    text: "Envía tu última foto de galería (si no es privada).",
+    contributor: "himanshu137",
     difficulty: "medium",
-    category: "personal"
+    category: "embarrassing"
   },
   {
     id: "es_sfw_d005",
-    text: "Haz 10 flexiones.",
-    contributor: "core#0001",
+    text: "Cambia tu estado o nombre de usuario a algo ridículo por 5 minutos.",
+    contributor: "himanshu137",
     difficulty: "medium",
-    category: "personal"
-  },
-  {
-    id: "es_sfw_d006",
-    text: "Envía un mensaje a tu ex diciéndole que lo extrañas.",
-    contributor: "core#0001",
-    difficulty: "medium",
-    category: "personal"
-  },
-  {
-    id: "es_sfw_d007",
-    text: "Publica una foto embarazosa en redes sociales.",
-    contributor: "core#0001",
-    difficulty: "medium",
-    category: "personal"
-  },
-  {
-    id: "es_sfw_d008",
-    text: "Deja que alguien más publique un estado en tus redes sociales.",
-    contributor: "core#0001",
-    difficulty: "medium",
-    category: "personal"
-  },
-  {
-    id: "es_sfw_d009",
-    text: "Come una cucharada de salsa picante.",
-    contributor: "core#0001",
-    difficulty: "medium",
-    category: "personal"
-  },
-  {
-    id: "es_sfw_d010",
-    text: "Haz una parada de manos durante 30 segundos.",
-    contributor: "core#0001",
-    difficulty: "medium",
-    category: "personal"
+    category: "funny"
   }
 ];

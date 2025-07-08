@@ -1,5 +1,5 @@
 /**
- * Custom error class for truth-or-dare package
+ * Custom error class 
  */
 export class TruthOrDareError extends Error {
   public readonly code: string;
