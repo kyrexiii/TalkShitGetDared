@@ -1,25 +1,25 @@
 # 💀 TalkShitGetDared
 
-A dangerously cursed, zero-dependency TypeScript package for all your Truth or Dare needs.  
-Perfect for bots, APIs, party games, emotionally unstable couples, and Discord servers with too much free time.
+A dangerously cursed, zero-dependency TypeScript package for all your Truth or Dare needs  
+Perfect for bots, APIs, party games, emotionally unstable couples and Discord servers with too much time
 
-> 🧠 Use responsibly... or don’t.  
-> 😇 I'm not legally responsible if your relationship ends.
+> 🧠 Use responsibly... or don’t  
+> 😇 I'm not legally responsible if your relationship ends
 
 ---
 
 ## 🤸 What Even Is This?
 
-**TalkShitGetDared** is a JSON-powered chaos engine filled with:
-- ✅ Truths that emotionally damage people
-- ✅ Dares that ruin friend groups (safely)
-- 🔥 NSFW & SFW modes
-- 🌍 English and Spanish support
-- 🎯 Difficulty and category filters (because pain comes in levels)
+**TalkShitGetDared** is a json-fueled chaos machine packed with:
+- ✅ Truths that make people regret playing
+- ✅ Dares that might get you kicked out of the group chat
+- 🔥 NSFW + SFW modes
+- 🌍 English and spanish support
+- 🎯 Difficulty and category filtering (pain comes in levels)
 
 ---
 
-## 📦 Installation
+## 📦 Install it
 
 ```bash
 npm install talkshitgetdared
@@ -27,22 +27,37 @@ npm install talkshitgetdared
 
 ---
 
-## 🧪 Usage
+## 🧪 how 2 use
 
-```ts
-import { truthPrompts, darePrompts } from 'talkshitgetdared';
+```js
+const {
+  getTruth,
+  getDare,
+  getRandom,
+  getAvailableLanguages,
+  getAvailableModes
+} = require('talkshitgetdared')
 
-// get all NSFW truths in Spanish that are medium difficulty
-const chaos = truthPrompts.filter(p =>
-  p.id.startsWith('es_nsfw') && p.difficulty === 'medium'
-);
+console.log('Languages:', getAvailableLanguages())
+console.log('Modes in English:', getAvailableModes('english'))
+
+// get truth
+const truth = getTruth()
+console.log('Truth:', truth.prompt.text)
+console.log('Contributor:', truth.prompt.contributor)
+
+// get dare
+const dare = getDare({ mode: 'nsfw' }) // yeah that's right
+console.log('Dare:', dare.prompt.text)
+
+// get random (truth or dare)
+const random = getRandom({ language: 'spanish', mode: 'sfw' })
+console.log(`[${random.type}]`, random.prompt.text)
 ```
 
 ---
 
----
-
-## 📁 Folder Structure (in case you get lost)
+## 📁 Folder structure if you care
 
 ```
 /data
@@ -56,32 +71,32 @@ const chaos = truthPrompts.filter(p =>
 
 ---
 
-## 🤝 Contribute (or ruin it more)
+## 🙌 Add your own pain
 
-Want to add your own unhinged prompts in any language?
-Fork it, PR it, and maybe I’ll approve it while crying in the corner.
+Want to contribute your cursed prompts?
+Fork it, PR it or throw them in a bottle into the ocean and hope I see it
 
 ---
 
-## ⚠️ Legal & Emotional Disclaimer
+## ⚠️ Emotional warning lol
 
-This package is for entertainment purposes only.
-Do not use in court.
-Do not cry.
-Do not use with your ex unless you're ready for consequences.
+This package is for fun but don’t use it to fix your situationship
+I will NOT be attending your therapy session
 
 ---
 
 ## 📜 License
 
-MIT – do whatever you want, just don’t blame me for your breakup.
-> – [MIT License, Cursed Edition](./LICENSE.txt)
+MIT, do literally anything
+just don’t sue me if your friends block you
+
+[MIT License](./LICENSE.txt)
 
 ---
 
-## 🌐 Links
+## 🌐 Links and stuff
 
 * GitHub: [kyrexiii/TalkShitGetDared](https://github.com/kyrexiii/TalkShitGetDared)
-* NPM: [talkshitgetdared-v3](https://www.npmjs.com/package/talkshitgetdared)
+* NPM: [talkshitgetdared](https://www.npmjs.com/package/talkshitgetdared)
 
----
+```
