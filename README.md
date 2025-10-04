@@ -120,4 +120,3 @@ Just don’t sue me if your friends block you.
 * NPM: [talkshitgetdared](https://www.npmjs.com/package/talkshitgetdared)
 
 ````
-
