@@ -1,5 +1,4 @@
 
-````md
 # TalkShitGetDared 💀
 
 A dangerously cursed, zero-dependency TypeScript package for all your Truth or Dare needs.  
@@ -122,4 +121,3 @@ Just don’t sue me if your friends block you.
 
 ````
 
-```
