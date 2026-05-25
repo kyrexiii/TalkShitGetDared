@@ -1,14 +1,6 @@
 // Define Prompt interface inline to avoid import issues
 type DifficultyLevel = 'easy' | 'medium' | 'hard' | 'extreme';
-type PromptCategory =
-  | 'personal'
-  | 'embarrassing'
-  | 'relationships'
-  | 'funny'
-  | 'physical'
-  | 'social'
-  | 'intimate'
-  | 'confession';
+type PromptCategory = 'personal' | 'embarrassing' | 'relationships' | 'funny' | 'physical' | 'social' | 'intimate' | 'confession';
 
 interface Prompt {
   id: string;
