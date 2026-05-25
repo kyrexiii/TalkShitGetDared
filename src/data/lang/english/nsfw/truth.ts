@@ -2,297 +2,353 @@ import { Prompt } from '../../../../lib/types/index';
 
 export const truthPrompts: Prompt[] = [
   {
-    id: "en_nsfw_t001",
+    id: "en__nsfw_t001",
     text: "Have you ever compared your current partner to your ex — in bed or emotionally?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t002",
+    id: "en__nsfw_t002",
     text: "Would you go back to your ex if they promised to change everything?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t003",
-    text: "What’s one thing your partner does in bed that turns you off (but you pretend to like)?",
+    id: "en__nsfw_t003",
+    text: "What's one thing your partner does in bed that turns you off (but you pretend to like)?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "intimate"
+    category: "intimate",
   },
   {
-    id: "en_nsfw_t004",
+    id: "en__nsfw_t004",
     text: "Have you ever imagined someone else while talking intimately with your partner?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t005",
+    id: "en__nsfw_t005",
     text: "If your partner cheated, would you take revenge or cry silently?",
     contributor: "kyrexiii",
     difficulty: "medium",
-    category: "personal"
+    category: "personal",
   },
   {
-    id: "en_nsfw_t006",
+    id: "en__nsfw_t006",
     text: "What's one fantasy you've never told anyone because you're scared of being judged?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "intimate"
+    category: "intimate",
   },
   {
-    id: "en_nsfw_t007",
+    id: "en__nsfw_t007",
     text: "Have you ever faked moaning or enjoyment during a spicy session online or offline?",
     contributor: "kyrexiii",
     difficulty: "medium",
-    category: "personal"
+    category: "personal",
   },
   {
-    id: "en_nsfw_t008",
+    id: "en__nsfw_t008",
     text: "Be honest — who was better in bed: your ex or your current partner?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t009",
-    text: "Have you ever fantasized about your partner’s best friend?",
+    id: "en__nsfw_t009",
+    text: "Have you ever fantasized about your partner's best friend?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t010",
+    id: "en__nsfw_t010",
     text: "Would you ever do an open relationship if your current partner agreed?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t011",
+    id: "en__nsfw_t011",
     text: "What's something your current partner does *worse* than your ex?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t012",
+    id: "en__nsfw_t012",
     text: "Have you ever stalked your ex while being in a new relationship?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t013",
+    id: "en__nsfw_t013",
     text: "Do you miss your ex sometimes, even just a little bit?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t014",
+    id: "en__nsfw_t014",
     text: "Would you leave your partner if your dream crush suddenly wanted you?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t015",
-    text: "What’s your most controversial opinion about relationships?",
+    id: "en__nsfw_t015",
+    text: "What's your most controversial opinion about relationships?",
     contributor: "kyrexiii",
     difficulty: "medium",
-    category: "personal"
+    category: "personal",
   },
   {
-    id: "en_nsfw_t016",
+    id: "en__nsfw_t016",
     text: "Have you ever flirted with someone else while in a relationship?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t017",
-    text: "What’s the most manipulative thing you’ve done to someone you liked?",
+    id: "en__nsfw_t017",
+    text: "What's the most manipulative thing you've done to someone you liked?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "personal"
+    category: "personal",
   },
   {
-    id: "en_nsfw_t018",
-    text: "If your partner died suddenly, how fast do you think you’d move on?",
+    id: "en__nsfw_t018",
+    text: "If your partner died suddenly, how fast do you think you'd move on?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t019",
-    text: "What’s one thing you’ve done behind your partner’s back that they don’t know?",
+    id: "en__nsfw_t019",
+    text: "What's one thing you've done behind your partner's back that they don't know?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t020",
-    text: "Do you secretly think you could do better than your current partner?",
-    contributor: "kyrexiii",
+    id: "en__nsfw_t020",
+    text: "Have you ever stayed in a relationship mainly because you were scared of being alone?",
+    contributor: "godkode69",
     difficulty: "hard",
-    category: "personal"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t021",
-    text: "What’s the most embarrassing message you’ve sent during sexting?",
+    id: "en__nsfw_t021",
+    text: "What's the most embarrassing message you've sent during sexting?",
     contributor: "kyrexiii",
     difficulty: "medium",
-    category: "embarrassing"
+    category: "embarrassing",
   },
   {
-    id: "en_nsfw_t022",
+    id: "en__nsfw_t022",
     text: "Have you ever saved spicy pics of someone other than your partner?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t023",
-    text: "Would you date your partner’s best friend if they made a move first?",
-    contributor: "kyrexiii",
+    id: "en__nsfw_t023",
+    text: "Have you ever stayed in a relationship only for sexual reasons?",
+    contributor: "godkode69",
     difficulty: "hard",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t024",
-    text: "What’s your darkest intrusive thought during romantic moments?",
+    id: "en__nsfw_t024",
+    text: "What's your darkest intrusive thought during romantic moments?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "personal"
+    category: "personal",
   },
   {
-    id: "en_nsfw_t025",
+    id: "en__nsfw_t025",
     text: "Do you ever act horny just to avoid having a serious conversation?",
     contributor: "kyrexiii",
     difficulty: "medium",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t026",
-    text: "Have you ever kept talking to an ex behind your partner’s back?",
+    id: "en__nsfw_t026",
+    text: "Have you ever kept talking to an ex behind your partner's back?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t027",
-    text: "What’s something you desperately want to tell your partner but haven’t?",
+    id: "en__nsfw_t027",
+    text: "What's something you desperately want to tell your partner but haven't?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t028",
+    id: "en__nsfw_t028",
     text: "Have you ever used intimate photos for 'me time' without the other person knowing?",
     contributor: "kyrexiii",
     difficulty: "medium",
-    category: "intimate"
+    category: "intimate",
   },
   {
-    id: "en_nsfw_t029",
+    id: "en__nsfw_t029",
     text: "Do you actually believe your partner is 'the one'? Or are you settling?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t030",
-    text: "What’s something you said during a fight that you didn’t mean but never took back?",
+    id: "en__nsfw_t030",
+    text: "What's something you said during a fight that you didn't mean but never took back?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t031",
+    id: "en__nsfw_t031",
     text: "Do you ever wish your partner looked different — physically or aesthetically?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "personal"
+    category: "personal",
   },
   {
-    id: "en_nsfw_t032",
-    text: "What’s the biggest lie you've told in a relationship?",
+    id: "en__nsfw_t032",
+    text: "What's the biggest lie you've told in a relationship?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t033",
+    id: "en__nsfw_t033",
     text: "If your partner lost all physical attraction (weight, looks, etc), would you stay?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t034",
+    id: "en__nsfw_t034",
     text: "Do you sometimes flirt or post sexy things just to make your partner jealous?",
     contributor: "kyrexiii",
     difficulty: "medium",
-    category: "social"
+    category: "social",
   },
   {
-    id: "en_nsfw_t035",
+    id: "en__nsfw_t035",
     text: "Have you ever screenshotted a private chat with your partner and shared it?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t036",
+    id: "en__nsfw_t036",
     text: "Would you still love your partner if they became broke, lazy, and mentally unstable?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t037",
+    id: "en__nsfw_t037",
     text: "Have you ever talked shit about your partner to someone else?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t038",
+    id: "en__nsfw_t038",
     text: "Do you enjoy attention from others more than your partner's attention?",
     contributor: "kyrexiii",
     difficulty: "medium",
-    category: "personal"
+    category: "personal",
   },
   {
-    id: "en_nsfw_t039",
+    id: "en__nsfw_t039",
     text: "Do you think your partner is obsessed with you or just attached?",
     contributor: "kyrexiii",
     difficulty: "medium",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t040",
+    id: "en__nsfw_t040",
     text: "Have you ever threatened to break up just to get your way?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "confession"
+    category: "confession",
   },
   {
-    id: "en_nsfw_t041",
-    text: "Do you ever feel emotionally bored with your partner but don’t say anything?",
+    id: "en__nsfw_t041",
+    text: "Do you ever feel emotionally bored with your partner but don't say anything?",
     contributor: "kyrexiii",
     difficulty: "hard",
-    category: "relationships"
+    category: "relationships",
   },
   {
-    id: "en_nsfw_t042",
+    id: "en__nsfw_t042",
     text: "What is your least favorite physical feature of your current partner?",
     contributor: "kyrexiii",
     difficulty: "extreme",
-    category: "personal"
-  }
+    category: "personal",
+  },
+  {
+    id: "en__nsfw_t043",
+    text: "If your partner ever cheated on you, would you forgive them?",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "confession",
+  },
+  {
+    id: "en__nsfw_t044",
+    text: "What's one thing your partner does in bed which turns you on?",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "confession",
+  },
+  {
+    id: "en__nsfw_t045",
+    text: "What is your faviourite physical feature in your partner?",
+    contributor: "godkode69",
+    difficulty: "extreme",
+    category: "relationships",
+  },
+  {
+    id: "en__nsfw_t046",
+    text: "What is your partner's strong point - sexual or emotional?",
+    contributor: "godkode69",
+    difficulty: "medium",
+    category: "confession",
+  },
+  {
+    id: "en__nsfw_t047",
+    text: "Have you ever caught feelings for someone while already being in a relationship?",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "confession",
+  },
+  {
+    id: "en__nsfw_t048",
+    text: "What's something intimate you regret doing with someone?",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "confession",
+  },
+  {
+    id: "en__nsfw_t049",
+    text: "Have you ever intentionally made someone jealous because you wanted attention?",
+    contributor: "godkode69",
+    difficulty: "medium",
+    category: "social",
+  },
+  {
+    id: "en__nsfw_t050",
+    text: "What's the most emotionally toxic thing you've done in a relationship?",
+    contributor: "godkode69",
+    difficulty: "extreme",
+    category: "confession",
+  },
 ];
