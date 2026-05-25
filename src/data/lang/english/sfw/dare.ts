@@ -38,21 +38,21 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_sfw_d006",
-    text: "Sing the chorus of a random song in voice message — no backing track.",
+    text: "Sing the chorus of a random song in voice message — no retakes.",
     contributor: "kyrexiii",
     difficulty: "medium",
     category: "embarrassing"
   },
   {
     id: "en_sfw_d007",
-    text: "Text your crush or best friend: 'Do you ever think about me?' and screenshot the reply.",
+    text: "Text your crush or ex: 'Do you ever think about me?' and screenshot the reply.",
     contributor: "kyrexiii",
     difficulty: "hard",
     category: "social"
   },
   {
     id: "en_sfw_d008",
-    text: "Pretend you’re a celebrity giving a fake apology video in voice or text.",
+    text: "Pretend you’re a celebrity giving a fake apology video - no deleting the video afterwards.",
     contributor: "kyrexiii",
     difficulty: "easy",
     category: "funny"
@@ -66,7 +66,7 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_sfw_d010",
-    text: "Post 'I'm feeling cute today 😌' on your story for 5 minutes.",
+    text: "Post 'I'm feeling cute today 😌' on your story for the day.",
     contributor: "kyrexiii",
     difficulty: "hard",
     category: "social"
@@ -87,21 +87,21 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_sfw_d013",
-    text: "Talk in emojis only for the next 5 messages.",
+    text: "Talk in emojis only for the next 15 messages.",
     contributor: "kyrexiii",
     difficulty: "medium",
     category: "funny"
   },
   {
     id: "en_sfw_d014",
-    text: "Put 'I'm single again 😭' in your bio for 10 minutes.",
+    text: "Put 'I'm single again 😭' in your bio for the day.",
     contributor: "kyrexiii",
     difficulty: "hard",
     category: "social"
   },
   {
     id: "en_sfw_d015",
-    text: "Use text-to-speech and read a weird paragraph your friends give you.",
+    text: "Read a paragraph your friends give you in one breathe (no longer than 50 words.",
     contributor: "kyrexiii",
     difficulty: "medium",
     category: "funny"
@@ -115,7 +115,7 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_sfw_d017",
-    text: "Use an AI voice changer to sound like a cartoon character and send a line.",
+    text: "Use an AI voice changer to sound like a cartoon character and send their most spoken voiceline.",
     contributor: "kyrexiii",
     difficulty: "medium",
     category: "funny"
@@ -129,7 +129,7 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_sfw_d019",
-    text: "Make a 5-second rap about your current mood and send it.",
+    text: "Make a 30 second rap about your current mood and send it.",
     contributor: "kyrexiii",
     difficulty: "medium",
     category: "funny"
@@ -150,9 +150,135 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_sfw_d022",
-    text: "Try to say a tongue twister in a voice message — three times fast.",
+    text: "Try to say a tongue twister in a voice message — five times fast.",
     contributor: "kyrexiii",
     difficulty: "medium",
     category: "funny"
-  }
+  },
+  {
+  id: "en_sfw_d023",
+  text: "Call your partner / crush and sing 'Happy Birthday' to them even if it’s not their birthday.",
+  contributor: "godkode69",
+  difficulty: "hard",
+  category: "social"
+},
+{
+  id: "en_sfw_d024",
+  text: "For the next 10 messages, begin every sentence with 'My Lord'.",
+  contributor: "godkode69",
+  difficulty: "easy",
+  category: "funny"
+},
+{
+  id: "en_sfw_d025",
+  text: "Show everyone the 5th photo in your gallery.",
+  contributor: "godkode69",
+  difficulty: "medium",
+  category: "personal"
+},
+{
+  id: "en_sfw_d026",
+  text: "Call a random number and ask, 'Did you order my pizza?'",
+  contributor: "godkode69",
+  difficulty: "hard",
+  category: "social"
+},
+{
+  id: "en_sfw_d027",
+  text: "Dance for 1 minute without any music.",
+  contributor: "godkode69",
+  difficulty: "medium",
+  category: "embarrassing"
+},
+{
+  id: "en_sfw_d028",
+  text: "Imitate the person sitting next to you for the next 2 minutes.",
+  contributor: "godkode69",
+  difficulty: "easy",
+  category: "funny"
+},
+{
+  id: "en_sfw_d029",
+  text: "Drink a spoonful of lemon juice without making a face.",
+  contributor: "godkode69",
+  difficulty: "medium",
+  category: "physical"
+},
+{
+  id: "en_sfw_d030",
+  text: "Let your friends scroll through your WhatsApp chat history with your parents.",
+  contributor: "godkode69",
+  difficulty: "hard",
+  category: "personal"
+},
+{
+  id: "en_sfw_d031",
+  text: "Go outside and loudly shout 'I am finally free!'",
+  contributor: "godkode69",
+  difficulty: "hard",
+  category: "embarrassing"
+},
+{
+  id: "en_sfw_d032",
+  text: "Try touching your nose with your tongue.",
+  contributor: "godkode69",
+  difficulty: "easy",
+  category: "physical"
+},
+{
+  id: "en_sfw_d033",
+  text: "Make animal noises for the next 30 seconds.",
+  contributor: "godkode69",
+  difficulty: "easy",
+  category: "funny"
+},
+{
+  id: "en_sfw_d034",
+  text: "Text your ex 'I miss you' (if you dare).",
+  contributor: "godkode69",
+  difficulty: "extreme",
+  category: "social"
+},
+{
+  id: "en_sfw_d035",
+  text: "Do 10 pushups right now.",
+  contributor: "godkode69",
+  difficulty: "medium",
+  category: "physical"
+},
+{
+  id: "en_sfw_d036",
+  text: "Fill your mouth with water and let your friends try to make you laugh. Don’t spill it!",
+  contributor: "godkode69",
+  difficulty: "medium",
+  category: "funny"
+},
+{
+  id: "en_sfw_d037",
+  text: "Record a voice note saying 'I’m in love with my pillow 🥲' like you mean it.",
+  contributor: "godkode69",
+  difficulty: "medium",
+  category: "funny"
+},
+{
+  id: "en_sfw_d038",
+  text: "Change your status or username to something ridiculous for 2 hours.",
+  contributor: "godkode69",
+  difficulty: "medium",
+  category: "funny"
+},
+{
+  id: "en_sfw_d039",
+  text: "Stand on one leg and do 360 degree rotation without jumping!",
+  contributor: "godkode69",
+  difficulty: "medium",
+  category: "physical",
+},
+{
+  id: "en_sfw_d040",
+  text: "Change the last digit of your number and text the random number \"Watch your back, I am coming for you...\"",
+  contributor: "godkode69",
+  difficulty: "easy",
+  category: "personal",
+}
 ];
