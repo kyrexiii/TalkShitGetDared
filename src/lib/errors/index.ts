@@ -1,0 +1,1 @@
+export { TruthOrDareError } from './TruthOrDareError';

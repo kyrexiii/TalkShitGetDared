@@ -1,0 +1,56 @@
+# Source files
+src/
+
+# Tests
+**/*.test.ts
+**/*.spec.ts
+__tests__/
+coverage/
+.jest/
+
+# Config files
+tsconfig*.json
+jest.config.js
+.eslintrc.json
+.prettierrc
+.editorconfig
+
+# Development
+node_modules/
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+*.tsbuildinfo
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+
+# Documentation (keep README.md)
+docs/
+
+# Benchmarks
+benchmarks/
+
+# Scripts (keep in package for now)
+# scripts/
+
+# Examples
+examples/
+
+# Misc
+.DS_Store
+*.swp
+*.swo
+*~
+.env
+.env.local

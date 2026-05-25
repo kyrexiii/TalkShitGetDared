@@ -1,0 +1,48 @@
+import {
+    getBatch,
+    getStats,
+    enableHistory,
+    clearHistory,
+    getHistory
+} from '../index';
+
+console.log('🚀 TalkShitGetDared - Advanced Usage Example');
+console.log('-------------------------------------------');
+
+// 1. Batch Operations
+console.log('\n📦 Batch: 3 Unique SFW Truths');
+const batch = getBatch({
+    count: 3,
+    type: 'truth',
+    mode: 'sfw',
+    ensureUnique: true
+});
+
+batch.prompts.forEach((p, i) => {
+    console.log(`${i + 1}. ${p.prompt.text} [${p.prompt.category}]`);
+});
+
+// 2. History Tracking (Deduplication)
+console.log('\n🚫 History Tracking');
+enableHistory(true);
+console.log('History enabled. Getting 3 prompts...');
+
+// Simulate getting prompts
+const p1 = getBatch({ count: 1 }).prompts[0];
+const p2 = getBatch({ count: 1 }).prompts[0];
+const p3 = getBatch({ count: 1 }).prompts[0];
+
+console.log(`Generated IDs: ${p1.prompt.id}, ${p2.prompt.id}, ${p3.prompt.id}`);
+console.log('Current History:', getHistory());
+
+clearHistory();
+console.log('History cleared.');
+
+// 3. Library Statistics
+console.log('\n📊 Library Stats');
+const stats = getStats();
+console.log(`Total Prompts: ${stats.total}`);
+console.log('By Language:', stats.byLanguage);
+console.log('By Mode:', stats.byMode);
+console.log('By Type:', stats.byType);
+console.log('Available Categories:', Object.keys(stats.byCategory).join(', '));
