@@ -1,4 +1,3 @@
-import * as path from 'path';
 import { PromptService, StatisticsService } from '../services/index';
 import { DataLoader } from '../data/index';
 import { 
@@ -23,7 +22,7 @@ export class TruthOrDareCore {
     this.config = {
       defaultLanguage: 'english',
       defaultMode: 'sfw',
-      dataPath: path.join(__dirname, '..', '..', '..', 'data', 'lang'),
+      dataPath: '',
       ...config
     };
     

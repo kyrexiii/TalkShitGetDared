@@ -3,22 +3,38 @@
   "version": "1.0.9",
   "description": "The truth will hurt. An open-source cursed-core engine for Truth & Dare prompts.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "talkshitgetdared": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "node scripts/build.js",
     "start": "npm run build && node dist/test.js",
     "dev": "ts-node src/test.ts",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src/"
   },
   "files": [
     "dist",
-    "scripts",
-    "src",
     "README.md",
     "LICENSE.txt"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kyrexiii/TalkShitGetDared"
+  },
+  "homepage": "https://github.com/kyrexiii/TalkShitGetDared#readme",
+  "bugs": {
+    "url": "https://github.com/kyrexiii/TalkShitGetDared/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "keywords": [
     "truth-or-dare",
@@ -28,18 +44,17 @@
     "sfw",
     "typescript",
     "party",
-    "discord-bot"
+    "discord-bot",
+    "hinglish"
   ],
   "author": "Haruka",
   "license": "MIT",
-  "dependencies": {
-    "@types/node": "^24.0.10",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
-  },
   "devDependencies": {
     "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.10",
     "jest": "^30.4.2",
-    "ts-jest": "^29.4.11"
+    "ts-jest": "^29.4.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
