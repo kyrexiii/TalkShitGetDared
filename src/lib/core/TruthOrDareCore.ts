@@ -1,11 +1,15 @@
 import * as path from 'path';
-import { PromptService } from '../services/index';
+import { PromptService, StatisticsService } from '../services/index';
+import { DataLoader } from '../data/index';
 import { 
   Language, 
   Mode, 
   PromptOptions, 
   PromptResult, 
-  CoreConfig 
+  CoreConfig,
+  BatchOptions,
+  BatchResult,
+  PromptStats
 } from '../types/index';
 
 /**
@@ -59,6 +63,49 @@ export class TruthOrDareCore {
    */
   public getAvailableModes(language: Language): Mode[] {
     return this.promptService.getAvailableModes(language);
+  }
+
+  /**
+   * Get a batch of prompts
+   */
+  public getBatch(options: BatchOptions): BatchResult {
+    return this.promptService.getBatch(options);
+  }
+
+  /**
+   * Get library statistics
+   */
+  public getStats(): PromptStats {
+    const statsService = new StatisticsService(new DataLoader());
+    return statsService.getStats();
+  }
+
+  /**
+   * Check if history tracking is enabled
+   */
+  public isHistoryEnabled(): boolean {
+    return this.promptService.getHistoryService().isEnabled();
+  }
+
+  /**
+   * Enable or disable history tracking
+   */
+  public enableHistory(enabled: boolean): void {
+    this.promptService.getHistoryService().setEnabled(enabled);
+  }
+
+  /**
+   * Get current prompt history
+   */
+  public getHistory(): string[] {
+    return this.promptService.getHistoryService().getHistory();
+  }
+
+  /**
+   * Clear prompt history
+   */
+  public clearHistory(): void {
+    this.promptService.getHistoryService().clearHistory();
   }
 
   /**

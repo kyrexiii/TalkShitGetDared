@@ -1,11 +1,15 @@
-import { Language, Mode, PromptOptions, PromptResult, CoreConfig } from '../types/index';
+import { PromptHistoryService } from './PromptHistoryService';
+import { Language, Mode, PromptOptions, PromptResult, CoreConfig, BatchOptions, BatchResult } from '../types/index';
 export declare class PromptService {
     private config;
     private dataLoader;
+    private historyService;
     constructor(config: CoreConfig);
+    getHistoryService(): PromptHistoryService;
     getTruth(options?: PromptOptions): PromptResult;
     getDare(options?: PromptOptions): PromptResult;
     getRandom(options?: PromptOptions): PromptResult;
+    getBatch(options: BatchOptions): BatchResult;
     private getPrompt;
     private handleFallback;
     getAvailableLanguages(): Language[];

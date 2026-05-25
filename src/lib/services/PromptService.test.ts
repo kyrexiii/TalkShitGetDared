@@ -24,8 +24,8 @@ describe('PromptService', () => {
         });
 
         it('should filter by difficulty', () => {
-            const result = service.getTruth({ language: 'english', mode: 'sfw', difficulty: 'hard' });
-            expect(result.prompt.difficulty).toBe('hard');
+            const result = service.getTruth({ language: 'english', mode: 'sfw', difficulty: 'medium' });
+            expect(result.prompt.difficulty).toBe('medium');
         });
 
         it('should filter by category', () => {

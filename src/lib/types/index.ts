@@ -61,6 +61,8 @@ export interface CoreConfig {
   defaultLanguage: Language;
   defaultMode: Mode;
   dataPath: string;
+  enableHistory?: boolean;
+  maxHistorySize?: number;
 }
 
 /**
@@ -69,4 +71,37 @@ export interface CoreConfig {
 export interface CacheStats {
   size: number;
   keys: string[];
+}
+
+/**
+ * Statistics about the prompt library
+ */
+export interface PromptStats {
+  total: number;
+  byLanguage: Record<Language, number>;
+  byMode: Record<Mode, number>;
+  byType: Record<PromptType, number>;
+  byDifficulty: Record<DifficultyLevel, number>;
+  byCategory: Record<PromptCategory, number>;
+}
+
+/**
+ * Options for batch operations
+ */
+export interface BatchOptions {
+  count: number;
+  language?: Language;
+  mode?: Mode;
+  type?: PromptType;
+  ensureUnique?: boolean;
+  difficulty?: DifficultyLevel;
+  category?: PromptCategory;
+}
+
+/**
+ * Result of batch operations
+ */
+export interface BatchResult {
+  prompts: PromptResult[];
+  count: number;
 }

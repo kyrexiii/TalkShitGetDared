@@ -1,4 +1,4 @@
-import { Language, Mode, PromptOptions, PromptResult, CoreConfig } from '../types/index';
+import { Language, Mode, PromptOptions, PromptResult, CoreConfig, BatchOptions, BatchResult, PromptStats } from '../types/index';
 export declare class TruthOrDareCore {
     private promptService;
     private config;
@@ -8,6 +8,12 @@ export declare class TruthOrDareCore {
     getRandom(options?: PromptOptions): PromptResult;
     getAvailableLanguages(): Language[];
     getAvailableModes(language: Language): Mode[];
+    getBatch(options: BatchOptions): BatchResult;
+    getStats(): PromptStats;
+    isHistoryEnabled(): boolean;
+    enableHistory(enabled: boolean): void;
+    getHistory(): string[];
+    clearHistory(): void;
     clearCache(): void;
     getCacheStats(): {
         size: number;

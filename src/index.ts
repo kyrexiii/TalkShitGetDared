@@ -4,7 +4,10 @@ import {
   PromptResult, 
   Language, 
   Mode, 
-  CoreConfig 
+  CoreConfig,
+  BatchOptions,
+  BatchResult,
+  PromptStats
 } from './lib/index';
 
 // Create default instance
@@ -29,6 +32,41 @@ export function getDare(options: PromptOptions = {}): PromptResult {
  */
 export function getRandom(options: PromptOptions = {}): PromptResult {
   return defaultCore.getRandom(options);
+}
+
+/**
+ * Get a batch of prompts
+ */
+export function getBatch(options: BatchOptions): BatchResult {
+  return defaultCore.getBatch(options);
+}
+
+/**
+ * Get library statistics
+ */
+export function getStats(): PromptStats {
+  return defaultCore.getStats();
+}
+
+/**
+ * Enable or disable history tracking
+ */
+export function enableHistory(enabled: boolean): void {
+  defaultCore.enableHistory(enabled);
+}
+
+/**
+ * Get current prompt history
+ */
+export function getHistory(): string[] {
+  return defaultCore.getHistory();
+}
+
+/**
+ * Clear prompt history
+ */
+export function clearHistory(): void {
+  defaultCore.clearHistory();
 }
 
 /**

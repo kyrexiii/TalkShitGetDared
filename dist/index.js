@@ -17,6 +17,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getTruth = getTruth;
 exports.getDare = getDare;
 exports.getRandom = getRandom;
+exports.getBatch = getBatch;
+exports.getStats = getStats;
+exports.enableHistory = enableHistory;
+exports.getHistory = getHistory;
+exports.clearHistory = clearHistory;
 exports.getAvailableLanguages = getAvailableLanguages;
 exports.getAvailableModes = getAvailableModes;
 exports.createCore = createCore;
@@ -30,6 +35,21 @@ function getDare(options = {}) {
 }
 function getRandom(options = {}) {
     return defaultCore.getRandom(options);
+}
+function getBatch(options) {
+    return defaultCore.getBatch(options);
+}
+function getStats() {
+    return defaultCore.getStats();
+}
+function enableHistory(enabled) {
+    defaultCore.enableHistory(enabled);
+}
+function getHistory() {
+    return defaultCore.getHistory();
+}
+function clearHistory() {
+    defaultCore.clearHistory();
 }
 function getAvailableLanguages() {
     return defaultCore.getAvailableLanguages();

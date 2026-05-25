@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const index_1 = require("../index");
+console.log('🎮 TalkShitGetDared - Basic Usage Example');
+console.log('----------------------------------------');
+const truth = (0, index_1.getTruth)();
+console.log('\n🤔 Random Truth:');
+console.log(`"${truth.prompt.text}"`);
+console.log(`(ID: ${truth.prompt.id}, Difficulty: ${truth.prompt.difficulty})`);
+const dare = (0, index_1.getDare)();
+console.log('\n😈 Random Dare:');
+console.log(`"${dare.prompt.text}"`);
+console.log(`(ID: ${dare.prompt.id}, Difficulty: ${dare.prompt.difficulty})`);
+const random = (0, index_1.getRandom)();
+console.log(`\n🎲 Random ${random.type.toUpperCase()}:`);
+console.log(`"${random.prompt.text}"`);
+const nsfwDare = (0, index_1.getDare)({ mode: 'nsfw', difficulty: 'hard' });
+console.log('\n🔥 Hard NSFW Dare:');
+console.log(`"${nsfwDare.prompt.text}"`);
+const spanishTruth = (0, index_1.getTruth)({ language: 'spanish' });
+console.log('\n🇪🇸 Spanish Truth:');
+console.log(`"${spanishTruth.prompt.text}"`);
+//# sourceMappingURL=basic-usage.js.map

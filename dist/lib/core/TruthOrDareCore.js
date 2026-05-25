@@ -36,6 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TruthOrDareCore = void 0;
 const path = __importStar(require("path"));
 const index_1 = require("../services/index");
+const index_2 = require("../data/index");
 class TruthOrDareCore {
     constructor(config) {
         this.config = {
@@ -60,6 +61,25 @@ class TruthOrDareCore {
     }
     getAvailableModes(language) {
         return this.promptService.getAvailableModes(language);
+    }
+    getBatch(options) {
+        return this.promptService.getBatch(options);
+    }
+    getStats() {
+        const statsService = new index_1.StatisticsService(new index_2.DataLoader());
+        return statsService.getStats();
+    }
+    isHistoryEnabled() {
+        return this.promptService.getHistoryService().isEnabled();
+    }
+    enableHistory(enabled) {
+        this.promptService.getHistoryService().setEnabled(enabled);
+    }
+    getHistory() {
+        return this.promptService.getHistoryService().getHistory();
+    }
+    clearHistory() {
+        this.promptService.getHistoryService().clearHistory();
     }
     clearCache() {
         this.promptService.clearCache();
