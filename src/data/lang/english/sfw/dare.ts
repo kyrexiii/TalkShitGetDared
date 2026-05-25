@@ -1,14 +1,4 @@
-// Define Prompt interface inline to avoid import issues
-type DifficultyLevel = 'easy' | 'medium' | 'hard' | 'extreme';
-type PromptCategory = 'personal' | 'embarrassing' | 'relationships' | 'funny' | 'physical' | 'social' | 'intimate' | 'confession';
-
-interface Prompt {
-  id: string;
-  text: string;
-  contributor: string;
-  difficulty: DifficultyLevel;
-  category: PromptCategory;
-}
+import { Prompt } from '../../../../lib/types/index';
 
 export const darePrompts: Prompt[] = [
   {

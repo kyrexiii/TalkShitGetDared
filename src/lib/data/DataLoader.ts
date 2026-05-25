@@ -8,6 +8,10 @@ import * as enNsfwTruth from '../../data/lang/english/nsfw/truth';
 import * as enNsfwDare from '../../data/lang/english/nsfw/dare';
 import * as esSfwTruth from '../../data/lang/spanish/sfw/truth';
 import * as esSfwDare from '../../data/lang/spanish/sfw/dare';
+import * as hiSfwTruth from '../../data/lang/hinglish/sfw/truth';
+import * as hiSfwDare from '../../data/lang/hinglish/sfw/dare';
+import * as hiNsfwTruth from '../../data/lang/hinglish/nsfw/truth';
+import * as hiNsfwDare from '../../data/lang/hinglish/nsfw/dare';
 
 /**
  * Handles loading and caching of prompt data from direct imports
@@ -25,6 +29,10 @@ export class DataLoader {
       ['english_nsfw_dare', enNsfwDare.darePrompts],
       ['spanish_sfw_truth', esSfwTruth.truthPrompts],
       ['spanish_sfw_dare', esSfwDare.darePrompts],
+      ['hinglish_sfw_truth', hiSfwTruth.truthPrompts],
+      ['hinglish_sfw_dare', hiSfwDare.darePrompts],
+      ['hinglish_nsfw_truth', hiNsfwTruth.truthPrompts],
+      ['hinglish_nsfw_dare', hiNsfwDare.darePrompts],
     ]);
   }
 
