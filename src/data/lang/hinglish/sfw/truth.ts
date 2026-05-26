@@ -294,5 +294,5 @@ export const truthPrompts: Prompt[] = [
     contributor: 'godkode69',
     difficulty: 'easy',
     category: 'confession',
-  }
+  },
 ];
