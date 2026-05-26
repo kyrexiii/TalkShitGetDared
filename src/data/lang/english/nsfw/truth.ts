@@ -351,4 +351,11 @@ export const truthPrompts: Prompt[] = [
     difficulty: "extreme",
     category: "confession",
   },
+  {
+    id: "en__nsfw_t051",
+    text: "What's your body count?",
+    contributor: "godkode69",
+    difficulty: "easy",
+    category: "confession",
+  },
 ];
