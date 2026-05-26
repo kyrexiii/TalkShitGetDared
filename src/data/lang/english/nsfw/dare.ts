@@ -10,7 +10,7 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_nsfw_d002",
-    text: "Tell your partner you dreamt of your ex last night and don’t explain for 5 minutes.",
+    text: "Tell your partner you dreamt of your ex last night and don’t respond to them for 10 minutes.",
     contributor: "kyrexiii",
     difficulty: "hard",
     category: "confession"
@@ -24,7 +24,7 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_nsfw_d004",
-    text: "Write a 'breakup message' and send it. Wait 30 seconds before saying it's a dare.",
+    text: "Write a 'breakup message' and send it. Wait 5 minutes before saying it's a dare.",
     contributor: "kyrexiii",
     difficulty: "extreme",
     category: "relationships"
@@ -101,7 +101,7 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_nsfw_d015",
-    text: "Post 'Who wants to flirt?' on your story for 2 minutes.",
+    text: "Post 'Who wants to flirt?' on your story for 6 hours.",
     contributor: "kyrexiii",
     difficulty: "extreme",
     category: "social"
