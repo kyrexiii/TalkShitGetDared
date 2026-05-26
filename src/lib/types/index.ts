@@ -1,7 +1,7 @@
 /**
  * Supported languages for truth-or-dare content
  */
-export type Language = 'english' | 'spanish' | 'hinglish';
+export type Language = 'english' | 'hinglish' | 'spanish';
 
 /**
  * Content filtering modes
@@ -21,7 +21,15 @@ export type DifficultyLevel = 'easy' | 'medium' | 'hard' | 'extreme';
 /**
  * Categories for better prompt organization
  */
-export type PromptCategory = 'personal' | 'embarrassing' | 'relationships' | 'funny' | 'physical' | 'social' | 'intimate' | 'confession';
+export type PromptCategory =
+  | 'personal'
+  | 'embarrassing'
+  | 'relationships'
+  | 'funny'
+  | 'physical'
+  | 'social'
+  | 'intimate'
+  | 'confession';
 
 /**
  * Structure of a truth or dare prompt

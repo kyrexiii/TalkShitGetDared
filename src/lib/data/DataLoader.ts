@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access */
 import { Language, Mode, PromptType, Prompt } from '../types/index';
 import { TruthOrDareError } from '../errors/index';
 
@@ -6,12 +7,12 @@ import * as enSfwTruth from '../../data/lang/english/sfw/truth';
 import * as enSfwDare from '../../data/lang/english/sfw/dare';
 import * as enNsfwTruth from '../../data/lang/english/nsfw/truth';
 import * as enNsfwDare from '../../data/lang/english/nsfw/dare';
-import * as esSfwTruth from '../../data/lang/spanish/sfw/truth';
-import * as esSfwDare from '../../data/lang/spanish/sfw/dare';
 import * as hiSfwTruth from '../../data/lang/hinglish/sfw/truth';
 import * as hiSfwDare from '../../data/lang/hinglish/sfw/dare';
 import * as hiNsfwTruth from '../../data/lang/hinglish/nsfw/truth';
 import * as hiNsfwDare from '../../data/lang/hinglish/nsfw/dare';
+import * as spSfwTruth from '../../data/lang/spanish/sfw/truth';
+import * as spSfwDare from '../../data/lang/spanish/sfw/dare';
 
 /**
  * Handles loading and caching of prompt data from direct imports
@@ -27,12 +28,12 @@ export class DataLoader {
       ['english_sfw_dare', enSfwDare.darePrompts],
       ['english_nsfw_truth', enNsfwTruth.truthPrompts],
       ['english_nsfw_dare', enNsfwDare.darePrompts],
-      ['spanish_sfw_truth', esSfwTruth.truthPrompts],
-      ['spanish_sfw_dare', esSfwDare.darePrompts],
       ['hinglish_sfw_truth', hiSfwTruth.truthPrompts],
       ['hinglish_sfw_dare', hiSfwDare.darePrompts],
       ['hinglish_nsfw_truth', hiNsfwTruth.truthPrompts],
       ['hinglish_nsfw_dare', hiNsfwDare.darePrompts],
+      ['spanish_sfw_truth', spSfwTruth.truthPrompts],
+      ['spanish_sfw_dare', spSfwDare.darePrompts],
     ]);
   }
 
@@ -41,7 +42,7 @@ export class DataLoader {
    */
   public loadPrompts(language: Language, mode: Mode, type: PromptType): Prompt[] {
     const cacheKey = `${language}_${mode}_${type}`;
-    
+
     // Return cached data if available
     if (this.cache.has(cacheKey)) {
       return this.cache.get(cacheKey)!;
@@ -58,10 +59,10 @@ export class DataLoader {
     }
 
     this.validatePromptsData(prompts, dataKey);
-    
+
     // Cache the loaded data
     this.cache.set(cacheKey, prompts);
-    
+
     return prompts;
   }
 
@@ -77,19 +78,23 @@ export class DataLoader {
     }
 
     if (prompts.length === 0) {
-      throw new TruthOrDareError(
-        `No prompts found in ${filePath}`,
-        'NO_PROMPTS_FOUND'
-      );
+      throw new TruthOrDareError(`No prompts found in ${filePath}`, 'NO_PROMPTS_FOUND');
     }
 
     // Validate prompt structure
     for (const prompt of prompts) {
-      if (!prompt.id || typeof prompt.id !== 'string' || 
-          !prompt.text || typeof prompt.text !== 'string' ||
-          !prompt.contributor || typeof prompt.contributor !== 'string' ||
-          !prompt.difficulty || typeof prompt.difficulty !== 'string' ||
-          !prompt.category || typeof prompt.category !== 'string') {
+      if (
+        !prompt.id ||
+        typeof prompt.id !== 'string' ||
+        !prompt.text ||
+        typeof prompt.text !== 'string' ||
+        !prompt.contributor ||
+        typeof prompt.contributor !== 'string' ||
+        !prompt.difficulty ||
+        typeof prompt.difficulty !== 'string' ||
+        !prompt.category ||
+        typeof prompt.category !== 'string'
+      ) {
         throw new TruthOrDareError(
           `Invalid prompt structure in ${filePath}. Each prompt must have 'id', 'text', 'contributor', 'difficulty', and 'category' fields.`,
           'INVALID_PROMPT_STRUCTURE'
@@ -103,12 +108,12 @@ export class DataLoader {
    */
   public getAvailableLanguages(): Language[] {
     const languages = new Set<Language>();
-    
+
     for (const key of this.dataMap.keys()) {
       const language = key.split('_')[0] as Language;
       languages.add(language);
     }
-    
+
     return Array.from(languages);
   }
 
@@ -117,14 +122,14 @@ export class DataLoader {
    */
   public getAvailableModes(language: Language): Mode[] {
     const modes = new Set<Mode>();
-    
+
     for (const key of this.dataMap.keys()) {
       const [keyLanguage, keyMode] = key.split('_');
       if (keyLanguage === language) {
         modes.add(keyMode as Mode);
       }
     }
-    
+
     return Array.from(modes);
   }
 
@@ -141,7 +146,7 @@ export class DataLoader {
   public getCacheStats(): { size: number; keys: string[] } {
     return {
       size: this.cache.size,
-      keys: Array.from(this.cache.keys())
+      keys: Array.from(this.cache.keys()),
     };
   }
 }

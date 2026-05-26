@@ -1,0 +1,43 @@
+name: Data-Only PR Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  check-metadata:
+    name: Verify Modified Files
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Fetch and Verify Changed Files
+        id: verify-files
+        run: |
+          # Use GitHub CLI to get files changed in this PR without checking out code
+          CHANGED_FILES=$(gh pr view ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --json files -q '.files[].path')
+          
+          echo "Files modified in this PR:"
+          echo "$CHANGED_FILES"
+          
+          # Check if any file is outside src/data/lang/
+          OUTSIDE_FILES=0
+          for FILE in $CHANGED_FILES; do
+            if [[ ! $FILE == src/data/lang/* ]]; then
+              echo "::error::File outside src/data/lang/ modified: $FILE"
+              OUTSIDE_FILES=1
+            fi
+          done
+          
+          if [[ $OUTSIDE_FILES -eq 1 ]]; then
+            echo "PR contains non-data changes. Manual maintainer review is strictly required."
+            exit 1 # Fail the check if non-data files are modified
+          else
+            echo "PR contains ONLY data changes."
+            exit 0
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

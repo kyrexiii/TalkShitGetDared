@@ -1,13 +1,13 @@
-import { 
+import {
   TruthOrDareCore,
-  PromptOptions, 
-  PromptResult, 
-  Language, 
-  Mode, 
+  PromptOptions,
+  PromptResult,
+  Language,
+  Mode,
   CoreConfig,
   BatchOptions,
   BatchResult,
-  PromptStats
+  PromptStats,
 } from './lib/index';
 
 // Create default instance

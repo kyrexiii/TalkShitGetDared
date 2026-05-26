@@ -2,283 +2,283 @@ import { Prompt } from '../../../../lib/types/index';
 
 export const truthPrompts: Prompt[] = [
   {
-    id: "en_sfw_t001",
+    id: 'en_sfw_t001',
     text: "What's the last thing you lied about to your partner or best friend?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "confession"
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'confession',
   },
   {
-    id: "en_sfw_t002",
+    id: 'en_sfw_t002',
     text: "Have you ever stalked your crush's profile more than once in a day?",
-    contributor: "kyrexiii",
-    difficulty: "easy",
-    category: "personal"
+    contributor: 'kyrexiii',
+    difficulty: 'easy',
+    category: 'personal',
   },
   {
-    id: "en_sfw_t003",
-    text: "Have you ever sent a message and then panicked afterwards?",
-    contributor: "kyrexiii",
-    difficulty: "easy",
-    category: "embarrassing"
+    id: 'en_sfw_t003',
+    text: 'Have you ever sent a message and then panicked afterwards?',
+    contributor: 'kyrexiii',
+    difficulty: 'easy',
+    category: 'embarrassing',
   },
   {
-    id: "en_sfw_t004",
-    text: "Do you still check on someone you used to like?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "confession"
+    id: 'en_sfw_t004',
+    text: 'Do you still check on someone you used to like?',
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'confession',
   },
   {
-    id: "en_sfw_t005",
-    text: "Have you ever pretended to be offline to avoid someone?",
-    contributor: "kyrexiii",
-    difficulty: "easy",
-    category: "funny"
+    id: 'en_sfw_t005',
+    text: 'Have you ever pretended to be offline to avoid someone?',
+    contributor: 'kyrexiii',
+    difficulty: 'easy',
+    category: 'funny',
   },
   {
-    id: "en_sfw_t006",
+    id: 'en_sfw_t006',
     text: "What's one thing about your partner or crush that annoys you?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "relationships"
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'relationships',
   },
   {
-    id: "en_sfw_t007",
-    text: "Have you ever screenshotted a private chat and set it to someone else?",
-    contributor: "kyrexiii",
-    difficulty: "easy",
-    category: "social"
+    id: 'en_sfw_t007',
+    text: 'Have you ever screenshotted a private chat and set it to someone else?',
+    contributor: 'kyrexiii',
+    difficulty: 'easy',
+    category: 'social',
   },
   {
-    id: "en_sfw_t008",
+    id: 'en_sfw_t008',
     text: "What’s a harmless secret you've kept from your partner or friend?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "confession"
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'confession',
   },
   {
-    id: "en_sfw_t009",
+    id: 'en_sfw_t009',
     text: "What's something you miss from your childhood?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "personal"
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'personal',
   },
   {
-    id: "en_sfw_t010",
+    id: 'en_sfw_t010',
     text: "What's the last thing you searched on Google?",
-    contributor: "kyrexiii",
-    difficulty: "easy",
-    category: "funny"
+    contributor: 'kyrexiii',
+    difficulty: 'easy',
+    category: 'funny',
   },
   {
-    id: "en_sfw_t011",
+    id: 'en_sfw_t011',
     text: "What's the most embarrasing thing you did in front of your partner / crush?",
-    contributor: "godkode69",
-    difficulty: "easy",
-    category: "embarrassing"
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'embarrassing',
   },
   {
-    id: "en_sfw_t012",
-    text: "Have you ever muted someone’s notifications and never told them?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "confession"
+    id: 'en_sfw_t012',
+    text: 'Have you ever muted someone’s notifications and never told them?',
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'confession',
   },
   {
-    id: "en_sfw_t013",
-    text: "What’s one thing your partner/crush does that you secretly find cringe?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "personal"
+    id: 'en_sfw_t013',
+    text: 'What’s one thing your partner/crush does that you secretly find cringe?',
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'personal',
   },
   {
-    id: "en_sfw_t014",
+    id: 'en_sfw_t014',
     text: "What's a habit you want to change about yourself but keep ignoring?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "personal"
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'personal',
   },
   {
-    id: "en_sfw_t015",
-    text: "Have you ever acted interested in a conversation just to be polite?",
-    contributor: "kyrexiii",
-    difficulty: "easy",
-    category: "social"
+    id: 'en_sfw_t015',
+    text: 'Have you ever acted interested in a conversation just to be polite?',
+    contributor: 'kyrexiii',
+    difficulty: 'easy',
+    category: 'social',
   },
   {
-    id: "en_sfw_t016",
-    text: "Do you reply late to messages on purpose to seem busy?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "confession"
+    id: 'en_sfw_t016',
+    text: 'Do you reply late to messages on purpose to seem busy?',
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'confession',
   },
   {
-    id: "en_sfw_t017",
-    text: "Have you ever re-read old chats with your ex or crush just to feel something?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "confession"
+    id: 'en_sfw_t017',
+    text: 'Have you ever re-read old chats with your ex or crush just to feel something?',
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'confession',
   },
   {
-    id: "en_sfw_t018",
+    id: 'en_sfw_t018',
     text: "What's something you wish your online friends knew about you?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "personal"
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'personal',
   },
   {
-    id: "en_sfw_t019",
-    text: "Who do you vent to when you’re mentally exhausted?",
-    contributor: "kyrexiii",
-    difficulty: "medium",
-    category: "personal"
+    id: 'en_sfw_t019',
+    text: 'Who do you vent to when you’re mentally exhausted?',
+    contributor: 'kyrexiii',
+    difficulty: 'medium',
+    category: 'personal',
   },
   {
-    id: "en_sfw_t020",
-    text: "What emoji do you overuse to hide awkwardness?",
-    contributor: "kyrexiii",
-    difficulty: "easy",
-    category: "funny"
+    id: 'en_sfw_t020',
+    text: 'What emoji do you overuse to hide awkwardness?',
+    contributor: 'kyrexiii',
+    difficulty: 'easy',
+    category: 'funny',
   },
   {
-  id: "en_sfw_t021",
-  text: "What would you do if you were invisible for an entire day?",
-  contributor: "godkode69",
-  difficulty: "easy",
-  category: "funny"
-},
-{
-  id: "en_sfw_t022",
-  text: "What is your biggest fear which no one knows about?",
-  contributor: "godkode69",
-  difficulty: "hard",
-  category: "personal"
-},
-{
-  id: "en_sfw_t023",
-  text: "Have you ever taken a day off by pretending to be sick?",
-  contributor: "godkode69",
-  difficulty: "easy",
-  category: "confession"
-},
-{
-  id: "en_sfw_t024",
-  text: "What's the weirdest thing you have ever searched on the internet?",
-  contributor: "godkode69",
-  difficulty: "medium",
-  category: "embarrassing"
-},
-{
-  id: "en_sfw_t025",
-  text: "Have you ever crushed on your friend's partner / crush?",
-  contributor: "godkode69",
-  difficulty: "hard",
-  category: "relationships"
-},
-{
-  id: "en_sfw_t026",
-  text: "What is your most useless talent?",
-  contributor: "godkode69",
-  difficulty: "easy",
-  category: "funny"
-},
-{
-  id: "en_sfw_t027",
-  text: "Would you stop talking to your best friend for a million dollars?",
-  contributor: "godkode69",
-  difficulty: "medium",
-  category: "social"
-},
-{
-  id: "en_sfw_t028",
-  text: "Have you ever gifted something you got as a gift (regift)?",
-  contributor: "godkode69",
-  difficulty: "easy",
-  category: "confession"
-},
-{
-  id: "en_sfw_t029",
-  text: "What's a childhood nickname of yours which you did not like?",
-  contributor: "godkode69",
-  difficulty: "easy",
-  category: "embarrassing"
-},
-{
-  id: "en_sfw_t030",
-  text: "Have you ever gone to a wedding uninvited?",
-  contributor: "godkode69",
-  difficulty: "medium",
-  category: "funny"
-},
-{
-  id: "en_sfw_t031",
-  text: "What was your most awkward date?",
-  contributor: "godkode69",
-  difficulty: "medium",
-  category: "embarrassing"
-},
-{
-  id: "en_sfw_t032",
-  text: "Given the chance, what celebrity would you marry?",
-  contributor: "godkode69",
-  difficulty: "easy",
-  category: "funny"
-},
-{
-  id: "en_sfw_t033",
-  text: "Have you ever pee'd in a pool?",
-  contributor: "godkode69",
-  difficulty: "easy",
-  category: "embarrassing"
-},
-{
-  id: "en_sfw_t034",
-  text: "Have you ever cheated on your partner? Be it current or ex.",
-  contributor: "godkode69",
-  difficulty: "hard",
-  category: "relationships"
-},
-{
-  id: "en_sfw_t035",
-  text: "Have you ever snuck out at night without telling anyone?",
-  contributor: "godkode69",
-  difficulty: "medium",
-  category: "confession"
-},
-{
-  id: "en_sfw_t036",
-  text: "Have you ever deleted a message after sending it because it sounded stupid?",
-  contributor: "godkode69",
-  difficulty: "easy",
-  category: "embarrassing"
-},
-{
-  id: "en_sfw_t037",
-  text: "Have you ever felt lonely even though you had people to talk to?",
-  contributor: "godkode69",
-  difficulty: "medium",
-  category: "personal"
-},
-{
-  id: "en_sfw_t038",
-  text: "What's the pettiest reason you have been mad at someone?",
-  contributor: "godkode69",
-  difficulty: "medium",
-  category: "confession"
-},
-{
-  id: "en_sfw_t039",
-  text: "Have you ever judged someone, but later realised you were wrong?",
-  contributor: "godkode69",
-  difficulty: "medium",
-  category: "relationships"
-},
-{
-  id: "en_sfw_t040",
-  text: "What's a secret opinion of yours which your friends would not agree to?",
-  contributor: "godkode69",
-  difficulty: "medium",
-  category: "social"
-},
+    id: 'en_sfw_t021',
+    text: 'What would you do if you were invisible for an entire day?',
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'funny',
+  },
+  {
+    id: 'en_sfw_t022',
+    text: 'What is your biggest fear which no one knows about?',
+    contributor: 'godkode69',
+    difficulty: 'hard',
+    category: 'personal',
+  },
+  {
+    id: 'en_sfw_t023',
+    text: 'Have you ever taken a day off by pretending to be sick?',
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'confession',
+  },
+  {
+    id: 'en_sfw_t024',
+    text: "What's the weirdest thing you have ever searched on the internet?",
+    contributor: 'godkode69',
+    difficulty: 'medium',
+    category: 'embarrassing',
+  },
+  {
+    id: 'en_sfw_t025',
+    text: "Have you ever crushed on your friend's partner / crush?",
+    contributor: 'godkode69',
+    difficulty: 'hard',
+    category: 'relationships',
+  },
+  {
+    id: 'en_sfw_t026',
+    text: 'What is your most useless talent?',
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'funny',
+  },
+  {
+    id: 'en_sfw_t027',
+    text: 'Would you stop talking to your best friend for a million dollars?',
+    contributor: 'godkode69',
+    difficulty: 'medium',
+    category: 'social',
+  },
+  {
+    id: 'en_sfw_t028',
+    text: 'Have you ever gifted something you got as a gift (regift)?',
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'confession',
+  },
+  {
+    id: 'en_sfw_t029',
+    text: "What's a childhood nickname of yours which you did not like?",
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'embarrassing',
+  },
+  {
+    id: 'en_sfw_t030',
+    text: 'Have you ever gone to a wedding uninvited?',
+    contributor: 'godkode69',
+    difficulty: 'medium',
+    category: 'funny',
+  },
+  {
+    id: 'en_sfw_t031',
+    text: 'What was your most awkward date?',
+    contributor: 'godkode69',
+    difficulty: 'medium',
+    category: 'embarrassing',
+  },
+  {
+    id: 'en_sfw_t032',
+    text: 'Given the chance, what celebrity would you marry?',
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'funny',
+  },
+  {
+    id: 'en_sfw_t033',
+    text: "Have you ever pee'd in a pool?",
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'embarrassing',
+  },
+  {
+    id: 'en_sfw_t034',
+    text: 'Have you ever cheated on your partner? Be it current or ex.',
+    contributor: 'godkode69',
+    difficulty: 'hard',
+    category: 'relationships',
+  },
+  {
+    id: 'en_sfw_t035',
+    text: 'Have you ever snuck out at night without telling anyone?',
+    contributor: 'godkode69',
+    difficulty: 'medium',
+    category: 'confession',
+  },
+  {
+    id: 'en_sfw_t036',
+    text: 'Have you ever deleted a message after sending it because it sounded stupid?',
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'embarrassing',
+  },
+  {
+    id: 'en_sfw_t037',
+    text: 'Have you ever felt lonely even though you had people to talk to?',
+    contributor: 'godkode69',
+    difficulty: 'medium',
+    category: 'personal',
+  },
+  {
+    id: 'en_sfw_t038',
+    text: "What's the pettiest reason you have been mad at someone?",
+    contributor: 'godkode69',
+    difficulty: 'medium',
+    category: 'confession',
+  },
+  {
+    id: 'en_sfw_t039',
+    text: 'Have you ever judged someone, but later realised you were wrong?',
+    contributor: 'godkode69',
+    difficulty: 'medium',
+    category: 'relationships',
+  },
+  {
+    id: 'en_sfw_t040',
+    text: "What's a secret opinion of yours which your friends would not agree to?",
+    contributor: 'godkode69',
+    difficulty: 'medium',
+    category: 'social',
+  },
 ];

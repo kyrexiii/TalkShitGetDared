@@ -6,8 +6,11 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,6 +19,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Install pnpm
       uses: pnpm/action-setup@v3
@@ -30,6 +35,18 @@ jobs:
 
     - name: Install dependencies
       run: pnpm install
+
+    - name: Check for Data Generation Changes
+      run: |
+        pnpm run prebuild
+        if [[ -n $(git status --porcelain) ]]; then
+          echo "::error::Data exports generation caused unstaged changes. Contributors should commit the generated changes or the generator itself must be run locally."
+          git diff
+          exit 1
+        fi
+
+    - name: Lint
+      run: pnpm run lint
 
     - name: Build
       run: pnpm run build

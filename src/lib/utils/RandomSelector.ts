@@ -29,7 +29,7 @@ export class RandomSelector {
     if (count <= 0) {
       return [];
     }
-    
+
     if (count >= array.length) {
       return [...array];
     }

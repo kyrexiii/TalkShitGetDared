@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-argument, no-case-declarations */
 
 import { getTruth, getDare, getRandom, getStats, getAvailableLanguages } from './index';
 import { Mode, DifficultyLevel } from './lib/types/index';
@@ -15,20 +16,20 @@ const command = args[0] || 'random';
 
 // Parse flags
 function getFlag(flag: string, defaultValue?: string): string | undefined {
-    const index = args.indexOf(flag);
-    if (index !== -1 && args[index + 1]) {
-        return args[index + 1];
-    }
-    return defaultValue;
+  const index = args.indexOf(flag);
+  if (index !== -1 && args[index + 1]) {
+    return args[index + 1];
+  }
+  return defaultValue;
 }
 
 function hasFlag(flag: string): boolean {
-    return args.includes(flag);
+  return args.includes(flag);
 }
 
 // Show help
 if (hasFlag('--help') || hasFlag('-h')) {
-    console.log(`
+  console.log(`
 🎮 TalkShitGetDared CLI
 
 USAGE:
@@ -58,7 +59,7 @@ EXAMPLES:
 
 Visit https://github.com/kyrexiii/TalkShitGetDared for more info.
   `);
-    process.exit(0);
+  process.exit(0);
 }
 
 // Get options from flags
@@ -69,74 +70,74 @@ const category = getFlag('--category');
 const count = parseInt(getFlag('--count', '1') || '1', 10);
 
 try {
-    console.log('\n🎮 TalkShitGetDared\n');
+  console.log('\n🎮 TalkShitGetDared\n');
 
-    if (command === 'stats') {
-        const stats = getStats();
-        console.log('📊 Library Statistics:\n');
-        console.log(`  Total prompts: ${stats.total}`);
-        console.log(`\n  By Language:`);
-        Object.entries(stats.byLanguage).forEach(([lang, count]) => {
-            console.log(`    ${lang}: ${count}`);
-        });
-        console.log(`\n  By Mode:`);
-        Object.entries(stats.byMode).forEach(([m, c]) => {
-            console.log(`    ${m}: ${c}`);
-        });
-        console.log(`\n  By Type:`);
-        Object.entries(stats.byType).forEach(([type, c]) => {
-            console.log(`    ${type}: ${c}`);
-        });
-        console.log('');
-    } else if (command === 'languages') {
-        const languages = getAvailableLanguages();
-        console.log('🌍 Available Languages:\n');
-        languages.forEach(lang => console.log(`  • ${lang}`));
-        console.log('');
-    } else {
-        const options: any = {
-            language: language as any,
-            mode,
-        };
+  if (command === 'stats') {
+    const stats = getStats();
+    console.log('📊 Library Statistics:\n');
+    console.log(`  Total prompts: ${stats.total}`);
+    console.log(`\n  By Language:`);
+    Object.entries(stats.byLanguage).forEach(([lang, count]) => {
+      console.log(`    ${lang}: ${count}`);
+    });
+    console.log(`\n  By Mode:`);
+    Object.entries(stats.byMode).forEach(([m, c]) => {
+      console.log(`    ${m}: ${c}`);
+    });
+    console.log(`\n  By Type:`);
+    Object.entries(stats.byType).forEach(([type, c]) => {
+      console.log(`    ${type}: ${c}`);
+    });
+    console.log('');
+  } else if (command === 'languages') {
+    const languages = getAvailableLanguages();
+    console.log('🌍 Available Languages:\n');
+    languages.forEach((lang) => console.log(`  • ${lang}`));
+    console.log('');
+  } else {
+    const options: any = {
+      language: language as any,
+      mode,
+    };
 
-        // Only add optional properties if they're defined
-        if (difficulty) {
-            options.difficulty = difficulty;
-        }
-        if (category) {
-            options.category = category as any;
-        }
-
-        for (let i = 0; i < Math.min(count, 10); i++) {
-            let result;
-
-            switch (command) {
-                case 'truth':
-                    result = getTruth(options);
-                    console.log(`💭 TRUTH: ${result.prompt.text}`);
-                    break;
-                case 'dare':
-                    result = getDare(options);
-                    console.log(`🔥 DARE: ${result.prompt.text}`);
-                    break;
-                case 'random':
-                default:
-                    result = getRandom(options);
-                    const emoji = result.type === 'truth' ? '💭' : '🔥';
-                    const label = result.type.toUpperCase();
-                    console.log(`${emoji} ${label}: ${result.prompt.text}`);
-                    break;
-            }
-
-            if (count > 1) {
-                console.log('');
-            }
-        }
-
-        console.log('');
+    // Only add optional properties if they're defined
+    if (difficulty) {
+      options.difficulty = difficulty;
     }
+    if (category) {
+      options.category = category as any;
+    }
+
+    for (let i = 0; i < Math.min(count, 10); i++) {
+      let result;
+
+      switch (command) {
+        case 'truth':
+          result = getTruth(options);
+          console.log(`💭 TRUTH: ${result.prompt.text}`);
+          break;
+        case 'dare':
+          result = getDare(options);
+          console.log(`🔥 DARE: ${result.prompt.text}`);
+          break;
+        case 'random':
+        default:
+          result = getRandom(options);
+          const emoji = result.type === 'truth' ? '💭' : '🔥';
+          const label = result.type.toUpperCase();
+          console.log(`${emoji} ${label}: ${result.prompt.text}`);
+          break;
+      }
+
+      if (count > 1) {
+        console.log('');
+      }
+    }
+
+    console.log('');
+  }
 } catch (error) {
-    console.error('\n❌ Error:', error instanceof Error ? error.message : 'Unknown error');
-    console.log('\nTry: npx talkshitgetdared --help\n');
-    process.exit(1);
+  console.error('\n❌ Error:', error instanceof Error ? error.message : 'Unknown error');
+  console.log('\nTry: npx talkshitgetdared --help\n');
+  process.exit(1);
 }
