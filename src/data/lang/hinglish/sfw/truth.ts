@@ -288,4 +288,11 @@ export const truthPrompts: Prompt[] = [
     difficulty: 'medium',
     category: 'social',
   },
+  {
+    id: 'hn_sfw_t042',
+    text: 'Tum kitne din bina nahaye rahe ho?',
+    contributor: 'godkode69',
+    difficulty: 'easy',
+    category: 'confession',
+  },
 ];
