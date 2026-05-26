@@ -290,7 +290,7 @@ export const truthPrompts: Prompt[] = [
   },
   {
     id: 'hn_sfw_t042',
-    text: "Tum kitne din bina nahaye rahe ho?",
+    text: 'Tum kitne din bina nahaye rahe ho?',
     contributor: 'godkode69',
     difficulty: 'easy',
     category: 'confession',
