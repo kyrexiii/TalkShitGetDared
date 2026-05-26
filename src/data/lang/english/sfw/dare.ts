@@ -274,11 +274,5 @@ export const darePrompts: Prompt[] = [
     difficulty: 'medium',
     category: 'physical',
   },
-  {
-    id: 'en_sfw_d040',
-    text: 'Change the last digit of your number and text the random number "Watch your back, I am coming for you..."',
-    contributor: 'godkode69',
-    difficulty: 'easy',
-    category: 'personal',
-  },
+
 ];
