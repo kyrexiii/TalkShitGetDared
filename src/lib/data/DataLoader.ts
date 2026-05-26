@@ -47,7 +47,7 @@ export class DataLoader {
 
     // Return cached data if available
     if (this.cache.has(cacheKey)) {
-      return this.cache.get(cacheKey)!;
+      return this.cache.get(cacheKey) as Prompt[];
     }
 
     const dataKey = `${language}_${mode}_${type}`;
