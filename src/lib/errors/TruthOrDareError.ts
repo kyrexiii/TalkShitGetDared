@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
- * Custom error class 
+ * Custom error class
  */
 export class TruthOrDareError extends Error {
   public readonly code: string;
@@ -26,7 +27,7 @@ export class TruthOrDareError extends Error {
       message: this.message,
       code: this.code,
       timestamp: this.timestamp.toISOString(),
-      stack: this.stack
+      stack: this.stack,
     };
   }
 }

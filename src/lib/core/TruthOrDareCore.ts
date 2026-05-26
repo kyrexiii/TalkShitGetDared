@@ -1,14 +1,14 @@
 import { PromptService, StatisticsService } from '../services/index';
 import { DataLoader } from '../data/index';
-import { 
-  Language, 
-  Mode, 
-  PromptOptions, 
-  PromptResult, 
+import {
+  Language,
+  Mode,
+  PromptOptions,
+  PromptResult,
   CoreConfig,
   BatchOptions,
   BatchResult,
-  PromptStats
+  PromptStats,
 } from '../types/index';
 
 /**
@@ -23,9 +23,9 @@ export class TruthOrDareCore {
       defaultLanguage: 'english',
       defaultMode: 'sfw',
       dataPath: '',
-      ...config
+      ...config,
     };
-    
+
     this.promptService = new PromptService(this.config);
   }
 

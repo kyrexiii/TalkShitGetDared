@@ -1,10 +1,4 @@
-import {
-    getBatch,
-    getStats,
-    enableHistory,
-    clearHistory,
-    getHistory
-} from '../index';
+import { getBatch, getStats, enableHistory, clearHistory, getHistory } from '../index';
 
 console.log('🚀 TalkShitGetDared - Advanced Usage Example');
 console.log('-------------------------------------------');
@@ -12,14 +6,14 @@ console.log('-------------------------------------------');
 // 1. Batch Operations
 console.log('\n📦 Batch: 3 Unique SFW Truths');
 const batch = getBatch({
-    count: 3,
-    type: 'truth',
-    mode: 'sfw',
-    ensureUnique: true
+  count: 3,
+  type: 'truth',
+  mode: 'sfw',
+  ensureUnique: true,
 });
 
 batch.prompts.forEach((p, i) => {
-    console.log(`${i + 1}. ${p.prompt.text} [${p.prompt.category}]`);
+  console.log(`${i + 1}. ${p.prompt.text} [${p.prompt.category}]`);
 });
 
 // 2. History Tracking (Deduplication)
