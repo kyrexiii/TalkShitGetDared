@@ -13,11 +13,6 @@ import * as hiNsfwDare from '../../data/lang/hinglish/nsfw/dare';
 import * as spSfwTruth from '../../data/lang/spanish/sfw/truth';
 import * as spSfwDare from '../../data/lang/spanish/sfw/dare';
 
-
-
-
-
-
 /**
  * Handles loading and caching of prompt data from direct imports
  */

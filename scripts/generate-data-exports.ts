@@ -72,8 +72,8 @@ function updateDataLoaderFile(languages: string[]) {
   });
 
   // Replace imports section
-  const importSectionRegex = /\/\/ Direct imports of all data modules[\s\S]*?(?=\/\*\*|\n\n)/;
-  const newImportSection = `// Direct imports of all data modules\n${imports.join('\n')}\n`;
+  const importSectionRegex = /\/\/ Direct imports of all data modules[\s\S]*?(?=\/\*\*)/;
+  const newImportSection = `// Direct imports of all data modules\n${imports.join('\n')}\n\n`;
   content = content.replace(importSectionRegex, newImportSection);
 
   // Replace dataMap section inside constructor
