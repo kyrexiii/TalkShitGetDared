@@ -18,7 +18,7 @@ exports.truthPrompts = [
     },
     {
         id: "en_sfw_t003",
-        text: "Have you ever sent a message and then panicked after sending it?",
+        text: "Have you ever sent a message and then panicked afterwards?",
         contributor: "kyrexiii",
         difficulty: "easy",
         category: "embarrassing"
@@ -46,7 +46,7 @@ exports.truthPrompts = [
     },
     {
         id: "en_sfw_t007",
-        text: "Have you ever ignored a message even though you saw it instantly?",
+        text: "Have you ever screenshotted a private chat and set it to someone else?",
         contributor: "kyrexiii",
         difficulty: "easy",
         category: "social"
@@ -60,7 +60,7 @@ exports.truthPrompts = [
     },
     {
         id: "en_sfw_t009",
-        text: "Who’s someone you still think about from your past chats?",
+        text: "What's something you miss from your childhood?",
         contributor: "kyrexiii",
         difficulty: "medium",
         category: "personal"
@@ -74,8 +74,8 @@ exports.truthPrompts = [
     },
     {
         id: "en_sfw_t011",
-        text: "Have you ever removed someone's story/viewed list just to stalk them?",
-        contributor: "kyrexiii",
+        text: "What's the most embarrasing thing you did in front of your partner / crush?",
+        contributor: "godkode69",
         difficulty: "easy",
         category: "embarrassing"
     },
@@ -88,7 +88,7 @@ exports.truthPrompts = [
     },
     {
         id: "en_sfw_t013",
-        text: "What’s one thing your partner/friend does that you secretly find cringe?",
+        text: "What’s one thing your partner/crush does that you secretly find cringe?",
         contributor: "kyrexiii",
         difficulty: "medium",
         category: "personal"
@@ -141,6 +141,146 @@ exports.truthPrompts = [
         contributor: "kyrexiii",
         difficulty: "easy",
         category: "funny"
-    }
+    },
+    {
+        id: "en_sfw_t021",
+        text: "What would you do if you were invisible for an entire day?",
+        contributor: "godkode69",
+        difficulty: "easy",
+        category: "funny"
+    },
+    {
+        id: "en_sfw_t022",
+        text: "What is your biggest fear which no one knows about?",
+        contributor: "godkode69",
+        difficulty: "hard",
+        category: "personal"
+    },
+    {
+        id: "en_sfw_t023",
+        text: "Have you ever taken a day off by pretending to be sick?",
+        contributor: "godkode69",
+        difficulty: "easy",
+        category: "confession"
+    },
+    {
+        id: "en_sfw_t024",
+        text: "What's the weirdest thing you have ever searched on the internet?",
+        contributor: "godkode69",
+        difficulty: "medium",
+        category: "embarrassing"
+    },
+    {
+        id: "en_sfw_t025",
+        text: "Have you ever crushed on your friend's partner / crush?",
+        contributor: "godkode69",
+        difficulty: "hard",
+        category: "relationships"
+    },
+    {
+        id: "en_sfw_t026",
+        text: "What is your most useless talent?",
+        contributor: "godkode69",
+        difficulty: "easy",
+        category: "funny"
+    },
+    {
+        id: "en_sfw_t027",
+        text: "Would you stop talking to your best friend for a million dollars?",
+        contributor: "godkode69",
+        difficulty: "medium",
+        category: "social"
+    },
+    {
+        id: "en_sfw_t028",
+        text: "Have you ever gifted something you got as a gift (regift)?",
+        contributor: "godkode69",
+        difficulty: "easy",
+        category: "confession"
+    },
+    {
+        id: "en_sfw_t029",
+        text: "What's a childhood nickname of yours which you did not like?",
+        contributor: "godkode69",
+        difficulty: "easy",
+        category: "embarrassing"
+    },
+    {
+        id: "en_sfw_t030",
+        text: "Have you ever gone to a wedding uninvited?",
+        contributor: "godkode69",
+        difficulty: "medium",
+        category: "funny"
+    },
+    {
+        id: "en_sfw_t031",
+        text: "What was your most awkward date?",
+        contributor: "godkode69",
+        difficulty: "medium",
+        category: "embarrassing"
+    },
+    {
+        id: "en_sfw_t032",
+        text: "Given the chance, what celebrity would you marry?",
+        contributor: "godkode69",
+        difficulty: "easy",
+        category: "funny"
+    },
+    {
+        id: "en_sfw_t033",
+        text: "Have you ever pee'd in a pool?",
+        contributor: "godkode69",
+        difficulty: "easy",
+        category: "embarrassing"
+    },
+    {
+        id: "en_sfw_t034",
+        text: "Have you ever cheated on your partner? Be it current or ex.",
+        contributor: "godkode69",
+        difficulty: "hard",
+        category: "relationships"
+    },
+    {
+        id: "en_sfw_t035",
+        text: "Have you ever snuck out at night without telling anyone?",
+        contributor: "godkode69",
+        difficulty: "medium",
+        category: "confession"
+    },
+    {
+        id: "en_sfw_t036",
+        text: "Have you ever deleted a message after sending it because it sounded stupid?",
+        contributor: "godkode69",
+        difficulty: "easy",
+        category: "embarrassing"
+    },
+    {
+        id: "en_sfw_t037",
+        text: "Have you ever felt lonely even though you had people to talk to?",
+        contributor: "godkode69",
+        difficulty: "medium",
+        category: "personal"
+    },
+    {
+        id: "en_sfw_t038",
+        text: "What's the pettiest reason you have been mad at someone?",
+        contributor: "godkode69",
+        difficulty: "medium",
+        category: "confession"
+    },
+    {
+        id: "en_sfw_t039",
+        text: "Have you ever judged someone, but later realised you were wrong?",
+        contributor: "godkode69",
+        difficulty: "medium",
+        category: "relationships"
+    },
+    {
+        id: "en_sfw_t040",
+        text: "What's a secret opinion of yours which your friends would not agree to?",
+        contributor: "godkode69",
+        difficulty: "medium",
+        category: "social"
+    },
 ];
 //# sourceMappingURL=truth.js.map

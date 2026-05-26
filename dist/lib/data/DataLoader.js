@@ -39,12 +39,12 @@ const enSfwTruth = __importStar(require("../../data/lang/english/sfw/truth"));
 const enSfwDare = __importStar(require("../../data/lang/english/sfw/dare"));
 const enNsfwTruth = __importStar(require("../../data/lang/english/nsfw/truth"));
 const enNsfwDare = __importStar(require("../../data/lang/english/nsfw/dare"));
-const esSfwTruth = __importStar(require("../../data/lang/spanish/sfw/truth"));
-const esSfwDare = __importStar(require("../../data/lang/spanish/sfw/dare"));
 const hiSfwTruth = __importStar(require("../../data/lang/hinglish/sfw/truth"));
 const hiSfwDare = __importStar(require("../../data/lang/hinglish/sfw/dare"));
 const hiNsfwTruth = __importStar(require("../../data/lang/hinglish/nsfw/truth"));
 const hiNsfwDare = __importStar(require("../../data/lang/hinglish/nsfw/dare"));
+const spSfwTruth = __importStar(require("../../data/lang/spanish/sfw/truth"));
+const spSfwDare = __importStar(require("../../data/lang/spanish/sfw/dare"));
 class DataLoader {
     constructor() {
         this.cache = new Map();
@@ -53,12 +53,12 @@ class DataLoader {
             ['english_sfw_dare', enSfwDare.darePrompts],
             ['english_nsfw_truth', enNsfwTruth.truthPrompts],
             ['english_nsfw_dare', enNsfwDare.darePrompts],
-            ['spanish_sfw_truth', esSfwTruth.truthPrompts],
-            ['spanish_sfw_dare', esSfwDare.darePrompts],
             ['hinglish_sfw_truth', hiSfwTruth.truthPrompts],
             ['hinglish_sfw_dare', hiSfwDare.darePrompts],
             ['hinglish_nsfw_truth', hiNsfwTruth.truthPrompts],
             ['hinglish_nsfw_dare', hiNsfwDare.darePrompts],
+            ['spanish_sfw_truth', spSfwTruth.truthPrompts],
+            ['spanish_sfw_dare', spSfwDare.darePrompts],
         ]);
     }
     loadPrompts(language, mode, type) {
