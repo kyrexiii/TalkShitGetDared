@@ -10,7 +10,7 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_nsfw_d002",
-    text: "Tell your partner you dreamt of your ex last night and don’t explain for 5 minutes.",
+    text: "Tell your partner you dreamt of your ex last night and don’t respond to them for 10 minutes.",
     contributor: "kyrexiii",
     difficulty: "hard",
     category: "confession"
@@ -24,7 +24,7 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_nsfw_d004",
-    text: "Write a 'breakup message' and send it. Wait 30 seconds before saying it's a dare.",
+    text: "Write a 'breakup message' and send it. Wait 5 minutes before saying it's a dare.",
     contributor: "kyrexiii",
     difficulty: "extreme",
     category: "relationships"
@@ -101,7 +101,7 @@ export const darePrompts: Prompt[] = [
   },
   {
     id: "en_nsfw_d015",
-    text: "Post 'Who wants to flirt?' on your story for 2 minutes.",
+    text: "Post 'Who wants to flirt?' on your story for 6 hours.",
     contributor: "kyrexiii",
     difficulty: "extreme",
     category: "social"
@@ -280,5 +280,110 @@ export const darePrompts: Prompt[] = [
     contributor: "kyrexiii",
     difficulty: "hard",
     category: "confession"
-  }
+  },
+  {
+    id: "en_nsfw_d041",
+    text: "Kiss the person next to you on the neck.",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "intimate"
+},
+{
+    id: "en_nsfw_d042",
+    text: "Sing your favorite song in a seductive voice.",
+    contributor: "godkode69",
+    difficulty: "medium",
+    category: "funny"
+},
+{
+    id: "en_nsfw_d043",
+    text: "Take off your shirt (for guys) or show your bra strap (for girls).",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "physical"
+},
+{
+    id: "en_nsfw_d044",
+    text: "Send a dirty text chosen by the group to someone.",
+    contributor: "godkode69",
+    difficulty: "extreme",
+    category: "social"
+},
+{
+    id: "en_nsfw_d045",
+    text: "Message your crush: 'I want you right now.'",
+    contributor: "godkode69",
+    difficulty: "extreme",
+    category: "social"
+},
+{
+    id: "en_nsfw_d046",
+    text: "Give someone a lap dance for 30 seconds.",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "physical"
+},
+{
+    id: "en_nsfw_d047",
+    text: "Whisper something dirty into the ear of the person next to you.",
+    contributor: "godkode69",
+    difficulty: "medium",
+    category: "intimate"
+},
+{
+    id: "en_nsfw_d048",
+    text: "Eat a banana or ice cream in a seductive way.",
+    contributor: "godkode69",
+    difficulty: "medium",
+    category: "funny"
+},
+{
+    id: "en_nsfw_d049",
+    text: "Show your hidden photos on your phone.",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "personal"
+},
+{
+    id: "en_nsfw_d050",
+    text: "Give someone a hickey (or create a fake one using makeup).",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "intimate"
+},
+{
+    id: "en_nsfw_d051",
+    text: "Show the part of your body that you find the sexiest.",
+    contributor: "godkode69",
+    difficulty: "medium",
+    category: "physical"
+},
+{
+    id: "en_nsfw_d052",
+    text: "Fake an orgasm in front of everyone.",
+    contributor: "godkode69",
+    difficulty: "hard",
+    category: "embarrassing"
+},
+{
+    id: "en_nsfw_d053",
+    text: "Tell everyone the color of your underwear and show it if you're comfortable.",
+    contributor: "godkode69",
+    difficulty: "medium",
+    category: "embarrassing"
+},
+{
+    id: "en_nsfw_d054",
+    text: "Pretend to French kiss someone in the air.",
+    contributor: "godkode69",
+    difficulty: "easy",
+    category: "funny"
+},
+{
+    id: "en_nsfw_d055",
+    text: "Describe your last sexual encounter in detail.",
+    contributor: "godkode69",
+    difficulty: "extreme",
+    category: "confession"
+}
 ];
