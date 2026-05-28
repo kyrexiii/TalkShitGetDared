@@ -7,12 +7,13 @@ import * as enSfwTruth from '../../data/lang/english/sfw/truth';
 import * as enSfwDare from '../../data/lang/english/sfw/dare';
 import * as enNsfwTruth from '../../data/lang/english/nsfw/truth';
 import * as enNsfwDare from '../../data/lang/english/nsfw/dare';
-import * as hiSfwTruth from '../../data/lang/hinglish/sfw/truth';
-import * as hiSfwDare from '../../data/lang/hinglish/sfw/dare';
-import * as hiNsfwTruth from '../../data/lang/hinglish/nsfw/truth';
-import * as hiNsfwDare from '../../data/lang/hinglish/nsfw/dare';
-import * as spSfwTruth from '../../data/lang/spanish/sfw/truth';
-import * as spSfwDare from '../../data/lang/spanish/sfw/dare';
+import * as hnSfwTruth from '../../data/lang/hinglish/sfw/truth';
+import * as hnSfwDare from '../../data/lang/hinglish/sfw/dare';
+import * as hnNsfwTruth from '../../data/lang/hinglish/nsfw/truth';
+import * as hnNsfwDare from '../../data/lang/hinglish/nsfw/dare';
+import * as mnSfwTruth from '../../data/lang/marathi-en/sfw/truth';
+import * as esSfwTruth from '../../data/lang/spanish/sfw/truth';
+import * as esSfwDare from '../../data/lang/spanish/sfw/dare';
 
 /**
  * Handles loading and caching of prompt data from direct imports
@@ -28,12 +29,13 @@ export class DataLoader {
       ['english_sfw_dare', enSfwDare.darePrompts],
       ['english_nsfw_truth', enNsfwTruth.truthPrompts],
       ['english_nsfw_dare', enNsfwDare.darePrompts],
-      ['hinglish_sfw_truth', hiSfwTruth.truthPrompts],
-      ['hinglish_sfw_dare', hiSfwDare.darePrompts],
-      ['hinglish_nsfw_truth', hiNsfwTruth.truthPrompts],
-      ['hinglish_nsfw_dare', hiNsfwDare.darePrompts],
-      ['spanish_sfw_truth', spSfwTruth.truthPrompts],
-      ['spanish_sfw_dare', spSfwDare.darePrompts],
+      ['hinglish_sfw_truth', hnSfwTruth.truthPrompts],
+      ['hinglish_sfw_dare', hnSfwDare.darePrompts],
+      ['hinglish_nsfw_truth', hnNsfwTruth.truthPrompts],
+      ['hinglish_nsfw_dare', hnNsfwDare.darePrompts],
+      ['marathi-en_sfw_truth', mnSfwTruth.truthPrompts],
+      ['spanish_sfw_truth', esSfwTruth.truthPrompts],
+      ['spanish_sfw_dare', esSfwDare.darePrompts],
     ]);
   }
 
@@ -45,7 +47,7 @@ export class DataLoader {
 
     // Return cached data if available
     if (this.cache.has(cacheKey)) {
-      return this.cache.get(cacheKey)!;
+      return this.cache.get(cacheKey) as Prompt[];
     }
 
     const dataKey = `${language}_${mode}_${type}`;
