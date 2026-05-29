@@ -1,6 +1,6 @@
 {
   "name": "talkshitgetdared",
-  "version": "1.0.10",
+  "version": "1.1.1",
   "description": "The truth will hurt. An open-source cursed-core engine for Truth & Dare prompts.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
