@@ -17,7 +17,7 @@ class TruthOrDareError extends Error {
             message: this.message,
             code: this.code,
             timestamp: this.timestamp.toISOString(),
-            stack: this.stack
+            stack: this.stack,
         };
     }
 }

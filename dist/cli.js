@@ -75,7 +75,7 @@ try {
     else if (command === 'languages') {
         const languages = (0, index_1.getAvailableLanguages)();
         console.log('🌍 Available Languages:\n');
-        languages.forEach(lang => console.log(`  • ${lang}`));
+        languages.forEach((lang) => console.log(`  • ${lang}`));
         console.log('');
     }
     else {

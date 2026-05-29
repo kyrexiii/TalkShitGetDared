@@ -1,0 +1,61 @@
+name: Publish to NPM
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write # Required for npm Trusted Publishing (provenance)
+
+jobs:
+  publish:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check for Unstaged Changes (Prebuild)
+        run: |
+          pnpm run prebuild
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "::error::Data exports generation caused unstaged changes. Please ensure 'prebuild' is run before creating a release."
+            git diff
+            exit 1
+          fi
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Dry Run Pack
+        run: npm pack --dry-run
+        
+      - name: Publish to NPM
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

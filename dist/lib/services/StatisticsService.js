@@ -45,7 +45,7 @@ class StatisticsService {
                             stats.byCategory[prompt.category]++;
                         });
                     }
-                    catch (error) {
+                    catch {
                         continue;
                     }
                 }

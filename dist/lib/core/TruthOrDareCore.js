@@ -9,7 +9,7 @@ class TruthOrDareCore {
             defaultLanguage: 'english',
             defaultMode: 'sfw',
             dataPath: '',
-            ...config
+            ...config,
         };
         this.promptService = new index_1.PromptService(this.config);
     }

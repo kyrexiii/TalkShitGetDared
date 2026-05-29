@@ -37,18 +37,18 @@ class PromptService {
             try {
                 let prompts = this.dataLoader.loadPrompts(language, mode, currentType);
                 if (options.difficulty) {
-                    prompts = prompts.filter(p => p.difficulty === options.difficulty);
+                    prompts = prompts.filter((p) => p.difficulty === options.difficulty);
                 }
                 if (options.category) {
-                    prompts = prompts.filter(p => p.category === options.category);
+                    prompts = prompts.filter((p) => p.category === options.category);
                 }
                 if (ensureUnique) {
-                    const uniquePrompts = prompts.filter(p => !usedIdsInBatch.has(p.id) && !this.historyService.hasPromptBeenUsed(p.id));
+                    const uniquePrompts = prompts.filter((p) => !usedIdsInBatch.has(p.id) && !this.historyService.hasPromptBeenUsed(p.id));
                     if (uniquePrompts.length > 0) {
                         prompts = uniquePrompts;
                     }
                     else {
-                        const batchUniquePrompts = prompts.filter(p => !usedIdsInBatch.has(p.id));
+                        const batchUniquePrompts = prompts.filter((p) => !usedIdsInBatch.has(p.id));
                         if (batchUniquePrompts.length > 0) {
                             prompts = batchUniquePrompts;
                         }
@@ -64,7 +64,7 @@ class PromptService {
                     prompt: selectedPrompt,
                     type: currentType,
                     language,
-                    mode
+                    mode,
                 });
             }
             catch (error) {
@@ -73,7 +73,7 @@ class PromptService {
         }
         return {
             prompts: results,
-            count: results.length
+            count: results.length,
         };
     }
     getPrompt(type, options) {
@@ -82,13 +82,13 @@ class PromptService {
         try {
             let prompts = this.dataLoader.loadPrompts(language, mode, type);
             if (options.difficulty) {
-                prompts = prompts.filter(prompt => prompt.difficulty === options.difficulty);
+                prompts = prompts.filter((prompt) => prompt.difficulty === options.difficulty);
             }
             if (options.category) {
-                prompts = prompts.filter(prompt => prompt.category === options.category);
+                prompts = prompts.filter((prompt) => prompt.category === options.category);
             }
             if (this.historyService.isEnabled()) {
-                const unusedPrompts = prompts.filter(prompt => !this.historyService.hasPromptBeenUsed(prompt.id));
+                const unusedPrompts = prompts.filter((prompt) => !this.historyService.hasPromptBeenUsed(prompt.id));
                 if (unusedPrompts.length > 0) {
                     prompts = unusedPrompts;
                 }
@@ -102,7 +102,7 @@ class PromptService {
                 prompt: selectedPrompt,
                 type,
                 language,
-                mode
+                mode,
             };
         }
         catch (error) {
@@ -110,7 +110,8 @@ class PromptService {
         }
     }
     handleFallback(type, requestedLanguage, requestedMode, originalError) {
-        if (requestedLanguage !== this.config.defaultLanguage || requestedMode !== this.config.defaultMode) {
+        if (requestedLanguage !== this.config.defaultLanguage ||
+            requestedMode !== this.config.defaultMode) {
             try {
                 const prompts = this.dataLoader.loadPrompts(this.config.defaultLanguage, this.config.defaultMode, type);
                 const selectedPrompt = index_2.RandomSelector.getRandomElement(prompts);
@@ -119,7 +120,7 @@ class PromptService {
                     prompt: selectedPrompt,
                     type,
                     language: this.config.defaultLanguage,
-                    mode: this.config.defaultMode
+                    mode: this.config.defaultMode,
                 };
             }
             catch (fallbackError) {

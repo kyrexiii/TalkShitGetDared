@@ -41,8 +41,8 @@ docs/
 # Benchmarks
 benchmarks/
 
-# Scripts (keep in package for now)
-# scripts/
+# Scripts
+scripts/
 
 # Examples
 examples/

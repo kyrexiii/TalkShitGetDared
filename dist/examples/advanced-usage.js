@@ -8,7 +8,7 @@ const batch = (0, index_1.getBatch)({
     count: 3,
     type: 'truth',
     mode: 'sfw',
-    ensureUnique: true
+    ensureUnique: true,
 });
 batch.prompts.forEach((p, i) => {
     console.log(`${i + 1}. ${p.prompt.text} [${p.prompt.category}]`);
