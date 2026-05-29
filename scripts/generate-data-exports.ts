@@ -9,17 +9,20 @@ function toPascalCase(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function extractMarkerFromFile(filePath: string): string {
-  const fileContent = fs.readFileSync(filePath, 'utf8');
+function readNonEmptyFile(filePath: string): string | null {
+  if (!fs.existsSync(filePath)) return null;
 
-  const match = fileContent.match(
-    /id:\s*['"]([a-z]{2,})_+(sfw|nsfw)_[td]\d+['"]/i,
-  );
+  const content = fs.readFileSync(filePath, 'utf8').trim();
+  return content.length > 0 ? content : null;
+}
+
+function extractMarkerFromContent(fileContent: string, filePath: string): string {
+  const match = fileContent.match(/id:\s*['"]([a-z]{2,})_(sfw|nsfw)_[td]\d+['"]/i);
 
   if (!match) {
     throw new Error(
       `Could not extract language marker from ${filePath}. ` +
-        `Expected an id like 'hn_sfw_t001' or 'en_nsfw_d004'.`,
+        `Expected an id like 'hn_sfw_t001' or 'en_nsfw_d004'.`
     );
   }
 
@@ -34,7 +37,7 @@ function generateDataExports() {
 
   const languages = fs
     .readdirSync(LANG_DIR)
-    .filter(file => fs.statSync(path.join(LANG_DIR, file)).isDirectory())
+    .filter((file) => fs.statSync(path.join(LANG_DIR, file)).isDirectory())
     .sort();
 
   if (languages.length === 0) {
@@ -42,17 +45,38 @@ function generateDataExports() {
     return;
   }
 
-  updateTypesFile(languages);
-  updateDataLoaderFile(languages);
+  const validLanguages = languages.filter((lang) => {
+    const langPath = path.join(LANG_DIR, lang);
+    const modes = ['sfw', 'nsfw'] as const;
+    const types = ['truth', 'dare'] as const;
+
+    for (const mode of modes) {
+      for (const type of types) {
+        const typePath = path.join(langPath, mode, `${type}.ts`);
+        const content = readNonEmptyFile(typePath);
+        if (content) return true;
+      }
+    }
+
+    return false;
+  });
+
+  if (validLanguages.length === 0) {
+    console.warn(`No non-empty language data files found in ${LANG_DIR}`);
+    return;
+  }
+
+  updateTypesFile(validLanguages);
+  updateDataLoaderFile(validLanguages);
 }
 
 function updateTypesFile(languages: string[]) {
   const content = fs.readFileSync(TYPES_FILE, 'utf8');
-  const langUnion = languages.map(lang => `'${lang}'`).join(' | ');
+  const langUnion = languages.map((lang) => `'${lang}'`).join(' | ');
 
   const updatedContent = content.replace(
     /export type Language = .*?;/,
-    `export type Language = ${langUnion};`,
+    `export type Language = ${langUnion};`
   );
 
   if (content !== updatedContent) {
@@ -67,37 +91,32 @@ function updateDataLoaderFile(languages: string[]) {
   const imports: string[] = [];
   const mapEntries: string[] = [];
 
-  languages.forEach(lang => {
+  languages.forEach((lang) => {
     const langPath = path.join(LANG_DIR, lang);
     const modes = ['sfw', 'nsfw'] as const;
     const types = ['truth', 'dare'] as const;
 
-    modes.forEach(mode => {
+    modes.forEach((mode) => {
       const modePath = path.join(langPath, mode);
-      if (!fs.existsSync(modePath)) return;
+      if (!fs.existsSync(modePath) || !fs.statSync(modePath).isDirectory()) return;
 
-      types.forEach(type => {
+      types.forEach((type) => {
         const typePath = path.join(modePath, `${type}.ts`);
-        if (!fs.existsSync(typePath)) return;
+        const fileContent = readNonEmptyFile(typePath);
+        if (!fileContent) return;
 
-        const marker = extractMarkerFromFile(typePath);
+        const marker = extractMarkerFromContent(fileContent, typePath);
         const alias = `${marker}${toPascalCase(mode)}${toPascalCase(type)}`;
 
-        imports.push(
-          `import * as ${alias} from '../../data/lang/${lang}/${mode}/${type}';`,
-        );
-        mapEntries.push(
-          `      ['${lang}_${mode}_${type}', ${alias}.${type}Prompts],`,
-        );
+        imports.push(`import * as ${alias} from '../../data/lang/${lang}/${mode}/${type}';`);
+        mapEntries.push(`      ['${lang}_${mode}_${type}', ${alias}.${type}Prompts],`);
       });
     });
   });
 
-  const importSectionRegex =
-    /\/\/ Direct imports of all data modules[\s\S]*?(?=\/\*\*)/;
+  const importSectionRegex = /\/\/ Direct imports of all data modules[\s\S]*?(?=\/\*\*)/;
 
-  const newImportSection =
-    `// Direct imports of all data modules\n${imports.join('\n')}\n\n`;
+  const newImportSection = `// Direct imports of all data modules\n${imports.join('\n')}\n\n`;
 
   if (!importSectionRegex.test(content)) {
     throw new Error('Could not locate import section in DataLoader.ts');
@@ -107,8 +126,7 @@ function updateDataLoaderFile(languages: string[]) {
 
   const mapSectionRegex = /this\.dataMap = new Map\(\[[\s\S]*?\]\);/;
 
-  const newMapSection =
-    `this.dataMap = new Map([\n${mapEntries.join('\n')}\n    ]);`;
+  const newMapSection = `this.dataMap = new Map([\n${mapEntries.join('\n')}\n    ]);`;
 
   if (!mapSectionRegex.test(content)) {
     throw new Error('Could not locate dataMap section in DataLoader.ts');
