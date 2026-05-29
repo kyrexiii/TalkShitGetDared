@@ -55,7 +55,7 @@ jobs:
       - name: Dry Run Pack
         run: npm pack --dry-run
         
+      # Authentication is handled by npm Trusted Publishing / GitHub OIDC.
+      # Do not use NPM_TOKEN here.
       - name: Publish to NPM
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
