@@ -1,4 +1,4 @@
-export type Language = 'english' | 'hinglish' | 'spanish';
+export type Language = 'english' | 'hinglish' | 'marathi-en' | 'spanish';
 export type Mode = 'sfw' | 'nsfw';
 export type PromptType = 'truth' | 'dare';
 export type DifficultyLevel = 'easy' | 'medium' | 'hard' | 'extreme';
