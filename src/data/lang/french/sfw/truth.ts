@@ -3,14 +3,14 @@ import { Prompt } from '../../../../lib/types/index';
 export const truthPrompts: Prompt[] = [
   {
     id: 'fr_sfw_t001',
-    text: "Quelle est le dernier mensonge que t’ai dis à un(e) conjoint(e) ou un meilleur(e) ami(e)?",
+    text: 'Quelle est le dernier mensonge que t’ai dis à un(e) conjoint(e) ou un meilleur(e) ami(e)?',
     contributor: 'kyrexiii',
     difficulty: 'medium',
     category: 'confession',
   },
   {
     id: 'fr_sfw_t002',
-    text: "As tu déjà espionner le profil de ton crush plus d’une fois dans l’espace d’une journée?",
+    text: 'As tu déjà espionner le profil de ton crush plus d’une fois dans l’espace d’une journée?',
     contributor: 'kyrexiii',
     difficulty: 'easy',
     category: 'personal',
@@ -38,7 +38,7 @@ export const truthPrompts: Prompt[] = [
   },
   {
     id: 'fr_sfw_t006',
-    text: "Qu’est-ce qui t’énerve chez ton partenaire ou ton crush?",
+    text: 'Qu’est-ce qui t’énerve chez ton partenaire ou ton crush?',
     contributor: 'kyrexiii',
     difficulty: 'medium',
     category: 'relationships',
@@ -52,32 +52,33 @@ export const truthPrompts: Prompt[] = [
   },
   {
     id: 'fr_sfw_t008',
-    text: "Qu’as-tu gardé comme secret inoffensif dans l’espace de ton couple ou d’une amitié?",
+    text: 'Qu’as-tu gardé comme secret inoffensif dans l’espace de ton couple ou d’une amitié?',
     contributor: 'kyrexiii',
     difficulty: 'medium',
     category: 'confession',
   },
   {
     id: 'fr_sfw_t009',
-    text: "Qu’est-ce qui te manque dans ton enfance?",
+    text: 'Qu’est-ce qui te manque dans ton enfance?',
     contributor: 'kyrexiii',
     difficulty: 'medium',
     category: 'personal',
   },
   {
     id: 'fr_sfw_t010',
-    text: "Quelle est ta dernière recherche sur Google?",
+    text: 'Quelle est ta dernière recherche sur Google?',
     contributor: 'kyrexiii',
     difficulty: 'easy',
     category: 'funny',
   },
   {
     id: 'fr_sfw_t011',
-    text: "Qu’as tu fais de plus embarrassant devant ton partenaire / crush?",
+    text: 'Qu’as tu fais de plus embarrassant devant ton partenaire / crush?',
     contributor: 'godkode69',
     difficulty: 'easy',
     category: 'embarrassing',
-  },/*
+  },
+  /*
   {
     id: 'fr_sfw_t012',
     text: 'Have you ever muted someone’s notifications and never told them?',
@@ -183,9 +184,10 @@ export const truthPrompts: Prompt[] = [
     difficulty: 'easy',
     category: 'funny',
   },*/
+
   {
     id: 'fr_sfw_t027',
-    text: 'Arrêterais-tu de parler à ton meilleur ami pour un million d\'euros?',
+    text: "Arrêterais-tu de parler à ton meilleur ami pour un million d'euros?",
     contributor: 'godkode69',
     difficulty: 'medium',
     category: 'social',
@@ -199,7 +201,7 @@ export const truthPrompts: Prompt[] = [
   },
   {
     id: 'fr_sfw_t029',
-    text: " Quelle souvenir d’enfance t’as déplu?",
+    text: ' Quelle souvenir d’enfance t’as déplu?',
     contributor: 'godkode69',
     difficulty: 'easy',
     category: 'embarrassing',
@@ -210,7 +212,8 @@ export const truthPrompts: Prompt[] = [
     contributor: 'godkode69',
     difficulty: 'medium',
     category: 'funny',
-  },/*
+  },
+  /*
   {
     id: 'fr_sfw_t031',
     text: 'What was your most awkward date?',
@@ -280,5 +283,6 @@ export const truthPrompts: Prompt[] = [
     contributor: 'godkode69',
     difficulty: 'medium',
     category: 'social',
-  },*/
+  },
+  */
 ];

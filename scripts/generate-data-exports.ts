@@ -13,8 +13,10 @@ function extractMarkerFromFile(filePath: string): string {
   const fileContent = fs.readFileSync(filePath, 'utf8');
 
   const match = fileContent.match(
-    /id:\s*['"]([a-z]{2,})_+(sfw|nsfw)_[td]\d+['"]/i,
+    /id:\s*['"]([a-z]{2,})_(sfw|nsfw)_[td]\d+['"]/i,
   );
+
+  
 
   if (!match) {
     throw new Error(
