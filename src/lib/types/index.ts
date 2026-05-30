@@ -1,7 +1,7 @@
 /**
  * Supported languages for truth-or-dare content
  */
-export type Language = 'english' | 'hinglish' | 'marathi-en' | 'spanish';
+export type Language = 'english' | 'french' | 'hinglish' | 'marathi-en' | 'spanish' | 'telugu';
 
 /**
  * Content filtering modes
